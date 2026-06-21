@@ -1,0 +1,51 @@
+:root {
+  --space-1: 0.25rem;
+  --space-2: 0.5rem;
+  --space-3: 0.75rem;
+  --space-4: 1rem;
+  --space-5: 1.5rem;
+  --space-6: 2rem;
+
+  --radius-sm: 0.5rem;
+  --radius: 0.75rem;
+  --radius-full: 62.5rem;
+
+  --shadow: 0 0.5rem 1.5rem rgba(0, 0, 0, 0.12);
+  --font: 'Manrope', system-ui, -apple-system, 'Segoe UI', sans-serif;
+  --font-fa:
+    'Vazirmatn', 'Noto Naskh Arabic', 'Noto Sans Arabic', 'Tahoma', 'Segoe UI', system-ui,
+    sans-serif;
+  --max-width: 40rem;
+
+  --bg: #f2f1ed;
+  --surface: #ffffff;
+  --surface-alt: #f2e8cf;
+  --text: #21281f;
+  --muted: #5c6b5a;
+  --primary: #386641;
+  --primary-strong: #2c5234;
+  --accent: #6a994e;
+  --accent-2: #a7c957;
+  --on-primary: #ffffff;
+  --on-accent: #11180c;
+  --border: rgba(56, 102, 65, 0.16);
+  --danger: #b3261e;
+  --success: #2f7d32;
+}
+
+[data-theme='dark'] {
+  --bg: #14190f;
+  --surface: #1d241b;
+  --surface-alt: #27331f;
+  --text: #f2f1ed;
+  --muted: #a9b6a3;
+  --primary: #6a994e;
+  --primary-strong: #a7c957;
+  --accent: #a7c957;
+  --accent-2: #6a994e;
+  --on-primary: #11180c;
+  --on-accent: #11180c;
+  --border: rgba(242, 241, 237, 0.14);
+  --danger: #e5736b;
+  --success: #7cc47f;
+}

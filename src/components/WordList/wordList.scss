@@ -1,0 +1,111 @@
+.word-list {
+  display: flex;
+  flex-direction: column;
+}
+
+.word-list--fill {
+  flex: 1;
+  min-height: 0;
+}
+
+.word-list__empty {
+  padding: var(--space-2) var(--space-1);
+  color: var(--muted);
+}
+
+.word-list__header {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: var(--space-2);
+}
+
+.word-list__item + .word-list__item {
+  border-top: 0.0625rem solid var(--border);
+}
+
+.word-list__items {
+  overflow: hidden;
+  background: var(--surface);
+  border: 0.0625rem solid var(--border);
+  border-radius: var(--radius);
+}
+
+.word-list__items--capped {
+  min-height: calc(5 * 3.25rem);
+  max-height: calc(5 * 3.25rem);
+  overflow-y: auto;
+  overscroll-behavior: contain;
+  scrollbar-width: thin;
+  scrollbar-color: var(--accent) transparent;
+}
+
+.word-list__items--capped::-webkit-scrollbar {
+  width: 0.5rem;
+}
+
+.word-list__items--capped::-webkit-scrollbar-thumb {
+  border-radius: var(--radius-full);
+  background: var(--accent);
+}
+
+.word-list__items--flex {
+  flex: 1;
+  min-height: calc(5 * 3.25rem);
+  overflow-y: auto;
+  overscroll-behavior: contain;
+  scrollbar-width: thin;
+  scrollbar-color: var(--accent) transparent;
+}
+
+.word-list__items--flex::-webkit-scrollbar {
+  width: 0.5rem;
+}
+
+.word-list__items--flex::-webkit-scrollbar-thumb {
+  border-radius: var(--radius-full);
+  background: var(--accent);
+}
+
+.word-list__link {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  padding: var(--space-3) var(--space-4);
+}
+
+@media (hover: hover) {
+  .word-list__link:hover {
+    background: var(--surface-alt);
+  }
+}
+
+.word-list__link .icon {
+  width: 1.25rem;
+  height: 1.25rem;
+  color: var(--muted);
+}
+
+.word-list__subtitle {
+  flex: 1;
+  min-width: 0;
+  overflow: hidden;
+  color: var(--muted);
+  font-size: 0.9rem;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.word-list__term {
+  color: var(--primary);
+  font-weight: 600;
+}
+
+.word-list__title {
+  margin-bottom: var(--space-2);
+  padding-left: var(--space-1);
+  color: var(--muted);
+  font-size: 0.85rem;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}

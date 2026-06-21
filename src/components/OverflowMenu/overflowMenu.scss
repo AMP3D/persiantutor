@@ -1,0 +1,45 @@
+.overflow-menu {
+  position: relative;
+}
+
+.overflow-menu__list {
+  position: absolute;
+  top: calc(100% + var(--space-1));
+  right: 0;
+  z-index: 30;
+  min-width: 14rem;
+  padding: var(--space-1);
+  background: var(--surface);
+  color: var(--text);
+  border: 0.0625rem solid var(--border);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+}
+
+.overflow-menu__list button {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  width: 100%;
+  padding: var(--space-3);
+  border-radius: var(--radius-sm);
+  text-align: left;
+}
+
+@media (hover: hover) {
+  .overflow-menu__list button:hover {
+    background: var(--surface-alt);
+  }
+}
+
+.overflow-menu__list .icon {
+  width: 1.25rem;
+  height: 1.25rem;
+  color: var(--accent);
+}
+
+.overflow-menu__scrim {
+  position: fixed;
+  inset: 0;
+  z-index: 20;
+}

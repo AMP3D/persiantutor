@@ -1,0 +1,39 @@
+.sub-nav {
+  display: flex;
+  align-items: center;
+  gap: var(--space-1);
+  padding: var(--space-2) var(--space-3);
+  background: var(--surface);
+  border-bottom: 0.0625rem solid var(--border);
+}
+
+.sub-nav__link {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+  padding: var(--space-2) var(--space-3);
+  border-radius: var(--radius-full);
+  color: var(--muted);
+  font-size: 0.85rem;
+  font-weight: 600;
+  transition:
+    background 0.15s ease,
+    color 0.15s ease;
+}
+
+@media (hover: hover) {
+  .sub-nav__link:hover {
+    background: var(--surface-alt);
+    color: var(--text);
+  }
+}
+
+.sub-nav__link--active {
+  background: var(--primary);
+  color: var(--on-primary);
+}
+
+.sub-nav__link .icon {
+  height: 1rem;
+  width: 1rem;
+}

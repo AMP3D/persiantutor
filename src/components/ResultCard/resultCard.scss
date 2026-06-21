@@ -1,0 +1,141 @@
+.result-card {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+  padding: var(--space-4);
+  background: var(--surface);
+  border: 0.0625rem solid var(--border);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+}
+
+.result-card--empty {
+  align-items: flex-start;
+  gap: var(--space-4);
+}
+
+.result-card__approx {
+  color: var(--muted);
+  font-size: 0.9rem;
+}
+
+.result-card__head {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: var(--space-2);
+}
+
+.result-card__hint {
+  color: var(--muted);
+}
+
+.result-card__meaning {
+  font-size: 1.1rem;
+}
+
+.result-card__note {
+  padding: var(--space-3);
+  background: var(--surface-alt);
+  border-radius: var(--radius-sm);
+  font-size: 0.95rem;
+}
+
+.result-card__source {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+  color: var(--muted);
+  font-size: 0.85rem;
+}
+
+.result-card__source .icon,
+.result-card__status .icon {
+  width: 1.1rem;
+  height: 1.1rem;
+}
+
+.result-card__status {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+  padding: var(--space-4);
+  color: var(--muted);
+}
+
+.result-card__farsi-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-2);
+  margin-top: var(--space-1);
+  padding: var(--space-1) var(--space-2);
+  background: var(--surface-alt);
+  border-radius: var(--radius-sm);
+}
+
+.result-card__farsi-text {
+  direction: rtl;
+  font-family: var(--font-fa);
+  font-size: 1.25rem;
+  font-weight: 400;
+}
+
+.result-card__meaning-block {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-1);
+}
+
+.result-card__tag {
+  padding: 0.1rem var(--space-2);
+  background: var(--accent-2);
+  color: var(--on-accent);
+  border-radius: var(--radius-full);
+  font-size: 0.75rem;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+}
+
+.result-card__tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-1);
+}
+
+.result-card__term {
+  color: var(--primary);
+  font-size: 1.4rem;
+}
+
+.result-card__usage {
+  display: flex;
+  flex-direction: column;
+  padding: var(--space-2) 0;
+}
+
+.result-card__usage + .result-card__usage {
+  border-top: 0.0625rem solid var(--border);
+}
+
+.result-card__usage-en {
+  color: var(--muted);
+  font-size: 0.9rem;
+}
+
+.result-card__usage-fa {
+  font-weight: 600;
+}
+
+.result-card__usage-group {
+  display: flex;
+  flex-direction: column;
+}
+
+.result-card__usage-label {
+  margin-top: var(--space-2);
+  color: var(--accent);
+  font-size: 0.8rem;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
