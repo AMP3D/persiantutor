@@ -26,3 +26,5 @@ CONVENTIONS.md
 THEME.md
 CLAUDE.md
 .claude
+# Dictionary build source (downloaded, not committed)
+_kaikki.jsonl

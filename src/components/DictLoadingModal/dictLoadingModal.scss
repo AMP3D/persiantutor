@@ -1,0 +1,18 @@
+.dict-modal__bar {
+  height: 0.5rem;
+  background: var(--border);
+  border-radius: var(--radius-full);
+  overflow: hidden;
+}
+
+.dict-modal__fill {
+  height: 100%;
+  background: var(--accent);
+  border-radius: var(--radius-full);
+  transition: width 0.3s ease;
+}
+
+.dict-modal__status {
+  color: var(--muted);
+  font-size: 0.85rem;
+}

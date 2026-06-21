@@ -1,6 +1,6 @@
 import { allEntries, findByKey } from '../db/entries';
 import type { LookupResult } from '../models/Lookup';
-import { createFuse, fuzzyMatch } from './fuzzy';
+import { fuzzyMatch, getFuse } from './fuzzy';
 import { normalize } from './normalize';
 
 /**
@@ -21,7 +21,7 @@ export const lookup = async (query: string): Promise<LookupResult> => {
     return { ...base, entry: exact, stage: 'exact', approximate: false };
   }
 
-  const fuzzy = fuzzyMatch(createFuse(await allEntries()), normalizedKey);
+  const fuzzy = fuzzyMatch(getFuse(await allEntries()), normalizedKey);
   if (fuzzy) {
     return { ...base, entry: fuzzy, stage: 'fuzzy', approximate: true };
   }

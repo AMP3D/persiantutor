@@ -4,6 +4,7 @@ import { clearAll, exportBundle, importBundle } from '../../db/transfer';
 import type { ExportBundle } from '../../models/Db';
 import { resetAiAssist } from '../../state/aiAssist';
 import { refreshCommon } from '../../state/common';
+import { ensureDictionary } from '../../state/dictionary';
 import { clearAiCache } from '../../state/llm';
 import { refreshRecent } from '../../state/recent';
 import { closeMenu, openConfirm } from '../../state/ui';
@@ -36,6 +37,7 @@ export const handleImportFile = (event: ChangeEvent<HTMLInputElement>): void => 
       const bundle = JSON.parse(await file.text()) as ExportBundle;
       await importBundle(bundle);
       await refreshLists();
+      void ensureDictionary();
     },
   });
 };
@@ -51,6 +53,7 @@ export const requestClear = (): void => {
       await clearAll();
       await seedEntries();
       await refreshLists();
+      void ensureDictionary();
     },
   });
 };

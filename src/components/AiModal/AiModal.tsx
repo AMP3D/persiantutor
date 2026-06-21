@@ -23,7 +23,7 @@ const AiModal = () => {
         {phase === 'idle' && (
           <>
             <p className="modal__message">
-              This downloads an on-device language model (~450 MB) that runs entirely in your
+              This downloads an on-device language model (~200 MB) that runs entirely in your
               browser and is cached for offline use afterward.
             </p>
             <p className="modal__message ai-modal__detail">

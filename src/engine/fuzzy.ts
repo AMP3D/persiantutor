@@ -36,8 +36,20 @@ const closeEnough = (query: string, entry: DictionaryEntry): boolean => {
   return best <= tolerance(query.length);
 };
 
-export const createFuse = (entries: DictionaryEntry[]): Fuse<DictionaryEntry> =>
-  new Fuse(entries, fuseOptions);
+// The Fuse index over the whole dictionary (~15k entries) is expensive to build,
+// so memoize it and only rebuild when the entry set changes.
+let cache: { fuse: Fuse<DictionaryEntry>; size: number } | null = null;
+
+export const invalidateFuzzy = (): void => {
+  cache = null;
+};
+
+export const getFuse = (entries: DictionaryEntry[]): Fuse<DictionaryEntry> => {
+  if (!cache || cache.size !== entries.length) {
+    cache = { fuse: new Fuse(entries, fuseOptions), size: entries.length };
+  }
+  return cache.fuse;
+};
 
 export const fuzzyMatch = (fuse: Fuse<DictionaryEntry>, key: string): DictionaryEntry | null => {
   for (const { item } of fuse.search(key, { limit: 8 })) {

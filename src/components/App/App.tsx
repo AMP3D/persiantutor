@@ -2,6 +2,7 @@ import { Route, Routes } from 'react-router-dom';
 import AiModal from '../AiModal/AiModal.tsx';
 import Alphabet from '../Alphabet/Alphabet.tsx';
 import ConfirmModal from '../ConfirmModal/ConfirmModal.tsx';
+import DictLoadingModal from '../DictLoadingModal/DictLoadingModal.tsx';
 import FlashCards from '../FlashCards/FlashCards.tsx';
 import Home from '../Home/Home.tsx';
 import MenuBar from '../MenuBar/MenuBar.tsx';
@@ -42,6 +43,7 @@ const App = () => (
       </Routes>
     </main>
     <ConfirmModal />
+    <DictLoadingModal />
   </div>
 );
 

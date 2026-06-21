@@ -1,4 +1,4 @@
-export type EntrySource = 'seed' | 'llm' | 'user';
+export type EntrySource = 'seed' | 'llm' | 'user' | 'dict';
 
 export type EntryTag =
   | 'adjective'

@@ -12,29 +12,40 @@ type Generator = (
 ) => Promise<Array<{ generated_text: string | ChatMessage[] }>>;
 
 const SYSTEM_PROMPT = [
-  'You are a Persian (Farsi) tutor for "Finglish" (Persian written with Latin letters).',
-  'The user gives ONE Finglish word or phrase. Reply with ONLY these five lines, nothing before or after,',
-  'and keep every line short (no rambling):',
-  'Corrected: <clean finglish spelling>',
-  'Meaning: <short English meaning>',
-  'Informal: <casual finglish sentence> = <english translation>',
-  'Formal: <polite finglish sentence> = <english translation>',
-  'Note: <one short note, or ->',
+  'You translate Finglish (Persian in Latin letters) to English.',
+  'Reply with exactly 5 lines in this format:',
+  'Corrected: <word>',
+  'Meaning: <english>',
+  'Informal: <sentence> = <translation>',
+  'Formal: <sentence> = <translation>',
+  'Note: <note or ->',
 ].join('\n');
 
-// Worked examples as real chat turns — small models follow the task far better this way.
+// Small models learn from examples, not instructions — use plenty of few-shot pairs.
 const FEWSHOT: ChatMessage[] = [
-  { role: 'user', content: 'Finglish: "merci"' },
+  { role: 'user', content: 'merci' },
   {
     role: 'assistant',
     content:
-      'Corrected: merci\nMeaning: thank you\nInformal: merci dadash = thanks, man\nFormal: kheyli mamnoonam = thank you very much\nNote: borrowed from French',
+      'Corrected: merci\nMeaning: thank you\nInformal: merci dadash = thanks bro\nFormal: kheyli mamnoonam = thank you very much\nNote: borrowed from French',
   },
-  { role: 'user', content: 'Finglish: "ab"' },
+  { role: 'user', content: 'ab' },
   {
     role: 'assistant',
     content:
       'Corrected: ab\nMeaning: water\nInformal: ye livan ab bede = give me a glass of water\nFormal: lotfan ye livan ab bedid = please give me a glass of water\nNote: -',
+  },
+  { role: 'user', content: 'salam' },
+  {
+    role: 'assistant',
+    content:
+      'Corrected: salam\nMeaning: hello\nInformal: salam chetori? = hi how are you?\nFormal: salam, haletan chetor ast? = hello, how are you?\nNote: from Arabic, used universally',
+  },
+  { role: 'user', content: 'khoshhal' },
+  {
+    role: 'assistant',
+    content:
+      'Corrected: khoshhal\nMeaning: happy\nInformal: kheyli khoshhalam = I am very happy\nFormal: besyar khoshhal hastam = I am very pleased\nNote: -',
   },
 ];
 
@@ -43,7 +54,6 @@ let generatorPromise: Promise<Generator> | null = null;
 const extractText = (output: Array<{ generated_text: string | ChatMessage[] }>): string => {
   const generated = output[0]?.generated_text;
   const text = Array.isArray(generated) ? (generated.at(-1)?.content ?? '') : (generated ?? '');
-  // Qwen3 is a reasoning model — drop any <think>…</think> block it emits.
   return text.replace(/<think>[\s\S]*?<\/think>/gi, '').trim();
 };
 
@@ -131,7 +141,7 @@ export const generateEntry = async (
     [
       { role: 'system', content: SYSTEM_PROMPT },
       ...FEWSHOT,
-      { role: 'user', content: `Finglish: "${query.trim()}" /no_think` },
+      { role: 'user', content: query.trim() },
     ],
     {
       max_new_tokens: LLM_MAX_NEW_TOKENS,

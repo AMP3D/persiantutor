@@ -6,6 +6,7 @@ export interface UserSetting<T = unknown> {
 }
 
 export const SettingKeys = {
+  DictVersion: 'dictVersion',
   LlmEnabled: 'llmEnabled',
   Theme: 'theme',
 } as const;
