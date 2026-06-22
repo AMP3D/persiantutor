@@ -2,10 +2,18 @@ export type EntrySource = 'seed' | 'llm' | 'user' | 'dict';
 
 export type EntryTag =
   | 'adjective'
+  | 'adverb'
+  | 'conjunction'
+  | 'determiner'
   | 'greeting'
+  | 'interjection'
   | 'noun'
+  | 'number'
   | 'offensive'
+  | 'particle'
   | 'phrase'
+  | 'preposition'
+  | 'pronoun'
   | 'slang'
   | 'verb'
   | 'vulgar';

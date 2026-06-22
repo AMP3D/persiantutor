@@ -2,15 +2,32 @@ import { signal } from '@preact/signals-react';
 import { addDictEntries, clearDictEntries, dictCount } from '../db/entries';
 import { getSetting, setSetting } from '../db/settings';
 import { normalize } from '../engine/normalize';
-import type { DictionaryEntry } from '../models/Entry';
+import type { DictionaryEntry, EntryTag } from '../models/Entry';
 import { SettingKeys } from '../models/Settings';
 
 // Bump when public/dictionary.json changes to force a one-time reload.
-const DICT_VERSION = 1;
+const DICT_VERSION = 2;
 const CHUNK = 2000;
 
-// Compact tuple shape from public/dictionary.json: [term, farsi, meaning, aliasKeys?].
-type DictTuple = [string, string, string, string[]?];
+// Compact tuple shape from public/dictionary.json: [term, farsi, meaning, pos, aliasKeys?].
+type DictTuple = [string, string, string, string, string[]?];
+
+// Wiktionary part-of-speech → display tag (matches the seed entries' tag chips).
+const POS_TAG: Record<string, EntryTag> = {
+  noun: 'noun',
+  name: 'noun',
+  verb: 'verb',
+  adj: 'adjective',
+  adv: 'adverb',
+  num: 'number',
+  pron: 'pronoun',
+  intj: 'interjection',
+  conj: 'conjunction',
+  prep: 'preposition',
+  particle: 'particle',
+  det: 'determiner',
+  phrase: 'phrase',
+};
 
 export type DictStatus = 'idle' | 'loading' | 'ready' | 'error';
 
@@ -19,7 +36,8 @@ export const dictStatus = signal<DictStatus>('idle');
 export const dictProgress = signal({ loaded: 0, total: 0 });
 
 const toEntry = (tuple: DictTuple, createdAt: number): DictionaryEntry => {
-  const [term, farsi, meaning, aliasKeys] = tuple;
+  const [term, farsi, meaning, pos, aliasKeys] = tuple;
+  const tag = POS_TAG[pos];
   return {
     term,
     farsi,
@@ -27,7 +45,7 @@ const toEntry = (tuple: DictTuple, createdAt: number): DictionaryEntry => {
     normalizedKey: normalize(term),
     aliases: [...new Set([normalize(term), ...(aliasKeys ?? [])])],
     usages: [],
-    tags: [],
+    tags: tag ? [tag] : [],
     source: 'dict',
     createdAt,
   };

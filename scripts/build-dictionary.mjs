@@ -1,7 +1,11 @@
+// Regenerate public/dictionary.json from Wiktionary (kaikki.org).
+//   1. curl -sL https://kaikki.org/dictionary/Persian/kaikki.org-dictionary-Persian.jsonl -o _kaikki.jsonl
+//   2. node scripts/build-dictionary.mjs
+// Tuple shape: [term, farsi, meaning, pos, aliasKeys?]
 import { createReadStream, writeFileSync } from 'node:fs';
 import { createInterface } from 'node:readline';
 
-// Mirror of the app's normalize() so spot-checks use identical keys.
+// Mirror of the app's normalize() so generated keys match runtime keys.
 const rules = [
   [/q/g, 'gh'],
   [/w/g, 'v'],
@@ -43,11 +47,55 @@ const toFinglish = (r) =>
     .trim()
     .toLowerCase();
 
+const PERSIAN = /[؀-ۿݐ-ݿࢠ-ࣿﭐ-﷿ﹰ-﻿]/g;
 const isPersianScript = (w) => /[؀-ۿ]/.test(w);
+
 const SKIP =
   /^(alternative |obsolete |misspelling |romanization of|abbreviation |initialism |acronym |clipping |plural of |singular of |inflection of |dual of |vocative |genitive |construct |.+ spelling of |.+ form of |superseded|nonstandard |dated (form|spelling)|eye dialect|honorific|Judeo-Persian)/i;
 
-const stripRef = (g) => g.replace(/\s*\([^)]*\)\s*$/, '').trim();
+// Turn a Wiktionary gloss into a plain meaning: drop Persian script and
+// parenthetical transliterations, keep the meaning after a "descriptor:" colon,
+// and discard bare grammatical pointers ("short for", "present stem of", …).
+const cleanGloss = (raw) => {
+  let s = raw.replace(/\([^)]*\)/g, ' ').replace(PERSIAN, ' ').replace(/[“”]/g, '"');
+  if (s.includes(':')) {
+    const after = s.slice(s.lastIndexOf(':') + 1).trim();
+    if (after) s = after;
+  }
+  s = s
+    .replace(/\s+/g, ' ')
+    .replace(/^[\s:;,."'·\-–—]+|[\s:;,."']+$/g, '')
+    .trim();
+  if (!s) return '';
+  if (/^(short for|see|compare|synonym of|alternative|abbreviation|initialism|acronym)\b/i.test(s)) {
+    return '';
+  }
+  if (/\b(participle|present stem|past stem|imperative stem|infinitive)\s+of\b/i.test(s)) return '';
+  return s;
+};
+
+// Prefer content words when several entries share a key (dast: noun "hand" > classifier).
+const POS_RANK = {
+  noun: 6,
+  verb: 6,
+  adj: 6,
+  adv: 5,
+  num: 4,
+  pron: 4,
+  name: 4,
+  phrase: 3,
+  intj: 3,
+  conj: 2,
+  prep: 2,
+  particle: 2,
+  det: 2,
+  postp: 1,
+  classifier: 1,
+  prefix: 0,
+  suffix: 0,
+  character: 0,
+};
+const rankOf = (pos) => POS_RANK[pos] ?? 1;
 
 const run = async () => {
   const rl = createInterface({ input: createReadStream('_kaikki.jsonl'), crlfDelay: Infinity });
@@ -64,9 +112,6 @@ const run = async () => {
     total++;
     if (obj.lang_code !== 'fa' || typeof obj.word !== 'string' || !isPersianScript(obj.word)) continue;
 
-    // Persian Wiktionary often lists several romanizations (e.g. Classical "kitāb"
-    // then Tehrani "ketâb"). Index the entry under ALL of them; show the last
-    // (usually the modern Persian one) as the display spelling.
     const romans = (obj.forms ?? [])
       .filter((f) => f.tags?.includes('romanization') && typeof f.form === 'string')
       .map((f) => f.form);
@@ -77,7 +122,9 @@ const run = async () => {
     const glosses = [];
     for (const sense of obj.senses ?? []) {
       for (const g of sense.glosses ?? []) {
-        if (typeof g === 'string' && !SKIP.test(g)) glosses.push(stripRef(g));
+        if (typeof g !== 'string' || SKIP.test(g)) continue;
+        const cleaned = cleanGloss(g);
+        if (cleaned) glosses.push(cleaned);
       }
     }
     if (!glosses.length) continue;
@@ -92,24 +139,27 @@ const run = async () => {
     let meaning = [...new Set(glosses)].slice(0, 3).join('; ');
     if (meaning.length > 160) meaning = meaning.slice(0, 157).trimEnd() + '…';
 
+    const pos = typeof obj.pos === 'string' ? obj.pos : '';
     const aliasKeys = keys.filter((k) => k !== primary);
-    const tuple = aliasKeys.length ? [term, obj.word, meaning, aliasKeys] : [term, obj.word, meaning];
-    if (!seen.has(primary)) seen.set(primary, tuple);
+    const tuple = aliasKeys.length ? [term, obj.word, meaning, pos, aliasKeys] : [term, obj.word, meaning, pos];
+
+    const rank = rankOf(pos);
+    const existing = seen.get(primary);
+    if (!existing || rank > existing.rank) seen.set(primary, { rank, tuple });
   }
 
-  const out = [...seen.values()];
+  const out = [...seen.values()].map((v) => v.tuple);
   writeFileSync('public/dictionary.json', JSON.stringify(out));
   console.log('scanned lines:', total, '| dictionary entries:', out.length);
 
-  // Spot-check: do common user spellings resolve (via primary key OR alias key)?
   const byKey = new Map();
   for (const e of out) {
     byKey.set(normalize(e[0]), e);
-    for (const k of e[3] ?? []) if (!byKey.has(k)) byKey.set(k, e);
+    for (const k of e[4] ?? []) if (!byKey.has(k)) byKey.set(k, e);
   }
-  for (const q of ['ab', 'ketab', 'khoob', 'salam', 'chetor', 'doost', 'pool', 'dard', 'ruz']) {
-    const hit = byKey.get(normalize(q));
-    console.log(`  ${q} -> ${hit ? `${hit[0]} | ${hit[1]} | ${hit[2].slice(0, 50)}` : 'NO MATCH'}`);
+  for (const q of ['ab', 'baste', 'dast', 'ketab', 'cheshm', 'darya', 'raftan', 'goftan', 'zaban']) {
+    const h = byKey.get(normalize(q));
+    console.log(`  ${q} -> ${h ? `${h[0]} [${h[3]}] | ${h[1]} | ${h[2].slice(0, 55)}` : 'NO MATCH'}`);
   }
 };
 
