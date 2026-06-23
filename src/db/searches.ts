@@ -3,6 +3,9 @@ import { db } from './db';
 
 export const clearSearches = (): Promise<void> => db.searches.clear();
 
+export const deleteSearchesByKey = (normalizedKey: string): Promise<number> =>
+  db.searches.where('normalizedKey').equals(normalizedKey).delete();
+
 export const recentSearches = async (limit = 100): Promise<SearchRecord[]> => {
   const rows = await db.searches.orderBy('at').reverse().toArray();
   const seen = new Set<string>();

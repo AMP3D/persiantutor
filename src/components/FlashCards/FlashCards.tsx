@@ -3,7 +3,7 @@ import { common } from '../../state/common';
 import Icon from '../Icon/Icon.tsx';
 import {
   answer,
-  buildDeck,
+  autoFocus,
   deck,
   ensureDeck,
   flipped,
@@ -12,9 +12,11 @@ import {
   index,
   next,
   prev,
+  reshuffle,
   result,
   reveal,
   stopFlip,
+  trackKeyboard,
 } from './flashCards';
 import './flashCards.scss';
 
@@ -25,6 +27,8 @@ const FlashCards = () => {
     ensureDeck();
   }, [cards.length]);
 
+  useEffect(() => trackKeyboard(), []);
+
   const entries = deck.value;
   const position = index.value;
   const card = entries[position];
@@ -32,7 +36,7 @@ const FlashCards = () => {
   const quizResult = result.value;
 
   useEffect(() => {
-    if (card) inputRef.current?.focus({ preventScroll: true });
+    if (card && autoFocus.value) inputRef.current?.focus({ preventScroll: true });
   }, [card]);
 
   if (!card) {
@@ -71,7 +75,7 @@ const FlashCards = () => {
               />
               <button
                 className="btn flash-cards__check"
-                disabled={!answer.value.trim()}
+                // disabled={!answer.value.trim()}
                 type="submit"
               >
                 Check
@@ -123,7 +127,7 @@ const FlashCards = () => {
           <Icon name="chevron-left" />
         </button>
 
-        <button aria-label="Shuffle deck" className="icon-btn" onClick={buildDeck} type="button">
+        <button aria-label="Shuffle deck" className="icon-btn" onClick={reshuffle} type="button">
           <Icon name="arrow-path" />
         </button>
 

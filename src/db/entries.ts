@@ -27,6 +27,11 @@ export const commonEntries = (): Promise<DictionaryEntry[]> =>
 
 export const dictCount = (): Promise<number> => db.entries.where('source').equals('dict').count();
 
+export const entriesByIds = async (ids: number[]): Promise<DictionaryEntry[]> => {
+  const rows = await db.entries.bulkGet(ids);
+  return rows.filter((row): row is DictionaryEntry => Boolean(row));
+};
+
 export const entriesCount = (): Promise<number> => db.entries.count();
 
 // When several entries share a key (curated seed vs the big Wiktionary dictionary),

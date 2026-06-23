@@ -83,20 +83,64 @@ const stem = (word: string): string => {
   return word;
 };
 
+// Spelled-out numbers and digits share a canonical form so "1" matches "one".
+const numberWords: Record<string, string> = {
+  zero: '0',
+  one: '1',
+  two: '2',
+  three: '3',
+  four: '4',
+  five: '5',
+  six: '6',
+  seven: '7',
+  eight: '8',
+  nine: '9',
+  ten: '10',
+  eleven: '11',
+  twelve: '12',
+  thirteen: '13',
+  fourteen: '14',
+  fifteen: '15',
+  sixteen: '16',
+  seventeen: '17',
+  eighteen: '18',
+  nineteen: '19',
+  twenty: '20',
+  thirty: '30',
+  forty: '40',
+  fifty: '50',
+  sixty: '60',
+  seventy: '70',
+  eighty: '80',
+  ninety: '90',
+  hundred: '100',
+  thousand: '1000',
+  million: '1000000',
+};
+
+const normalizeWord = (word: string): string => {
+  const stemmed = stem(word);
+  return numberWords[stemmed] ?? stemmed;
+};
+
 const tokenize = (value: string): string[] => {
   const words = value
     .toLowerCase()
     .normalize('NFKD')
     .replace(/[\u0300-\u036f]/g, '')
-    .replace(/[^a-z\s]/g, ' ')
+    .replace(/[^a-z0-9\s]/g, ' ')
     .split(/\s+/)
     .filter(Boolean);
   const meaningful = words.filter((word) => !stopwords.has(word));
-  return (meaningful.length ? meaningful : words).map(stem);
+  return (meaningful.length ? meaningful : words).map(normalizeWord);
 };
 
-const wordsClose = (a: string, b: string): boolean =>
-  a === b || editDistance(a, b) <= wordTolerance(Math.max(a.length, b.length));
+const wordsClose = (a: string, b: string): boolean => {
+  if (a === b) return true;
+  // Numbers must match exactly — "2" is not a typo of "1".
+  if (/\d/.test(a) || /\d/.test(b)) return false;
+  return editDistance(a, b) <= wordTolerance(Math.max(a.length, b.length));
+};
 
 const tokensMatch = (guess: string[], candidate: string[]): boolean => {
   if (!guess.length || guess.length !== candidate.length) return false;
@@ -115,10 +159,20 @@ const splitParts = (value: string): string[] =>
     .map((part) => part.trim())
     .filter(Boolean);
 
+/**
+ * A meaning string yields several acceptable answers: the whole thing, each comma/slash-separated
+ * synonym, and the same again with parentheticals dropped — so "rice (uncooked)" accepts both the
+ * full phrase and a bare "rice".
+ */
+const expand = (value: string): string[] => {
+  const variants = [value, value.replace(/\([^)]*\)/g, ' ')];
+  return variants.flatMap((variant) => [variant, ...splitParts(variant)]);
+};
+
 const acceptableAnswers = (entry: DictionaryEntry): string[] => {
-  const answers = [entry.meaning, ...splitParts(entry.meaning)];
+  const answers = expand(entry.meaning);
   for (const usage of entry.usages) {
-    answers.push(usage.english, ...splitParts(usage.english));
+    answers.push(...expand(usage.english));
   }
   return answers;
 };

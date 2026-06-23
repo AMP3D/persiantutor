@@ -6,6 +6,8 @@
   gap: var(--space-3);
   width: 100%;
   min-height: 0;
+  padding-bottom: var(--keyboard-inset, 0);
+  transition: padding-bottom 0.2s ease;
 }
 
 .flash-cards__card {

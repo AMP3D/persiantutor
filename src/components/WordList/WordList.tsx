@@ -39,6 +39,16 @@ const WordList = ({
               <span className="word-list__subtitle">{item.subtitle}</span>
               <Icon name="chevron-right" />
             </Link>
+            {item.onRemove ? (
+              <button
+                type="button"
+                className="word-list__remove"
+                aria-label={`Remove ${item.term}`}
+                onClick={item.onRemove}
+              >
+                <Icon name="x-mark" />
+              </button>
+            ) : null}
           </li>
         ))}
       </ul>

@@ -14,6 +14,7 @@ export const commonWords: SeedEntry[] = [
   {
     term: 'ādat bokon',
     meaning: 'get used to it',
+    farsi: 'عادت بکن',
     tags: ['phrase'],
     aliases: ['adat bokon', 'aadat kon'],
     usages: [
@@ -50,6 +51,7 @@ export const commonWords: SeedEntry[] = [
   {
     term: 'ahmagh',
     meaning: 'idiot, stupid',
+    farsi: 'احمق',
     tags: ['noun', 'adjective', 'offensive'],
     note: 'A direct insult. Softer than vulgar swearing, but still rude.',
     usages: [
@@ -64,6 +66,7 @@ export const commonWords: SeedEntry[] = [
   {
     term: 'alān',
     meaning: 'now, right now',
+    farsi: 'الان',
     tags: ['adjective'],
     usages: [
       { register: 'informal', finglish: 'alan miam', english: "I'm coming right now." },
@@ -73,6 +76,7 @@ export const commonWords: SeedEntry[] = [
   {
     term: 'aragh',
     meaning: 'sweat; also a distilled spirit (arak)',
+    farsi: 'عرق',
     tags: ['noun'],
     aliases: ['argh', 'argheh', 'aragheh'],
     note: 'Means "sweat" in everyday use; the same spelling also names the distilled drink arak.',
@@ -92,6 +96,7 @@ export const commonWords: SeedEntry[] = [
   {
     term: 'ārūm',
     meaning: 'calm, gently, slowly, quiet',
+    farsi: 'آروم',
     tags: ['adjective'],
     aliases: ['aram', 'aroum'],
     usages: [
@@ -102,6 +107,7 @@ export const commonWords: SeedEntry[] = [
   {
     term: 'artesh',
     meaning: 'army',
+    farsi: 'ارتش',
     tags: ['noun'],
     usages: [
       {
@@ -119,6 +125,7 @@ export const commonWords: SeedEntry[] = [
   {
     term: 'ārezū',
     meaning: 'wish, desire (also a given name)',
+    farsi: 'آرزو',
     tags: ['noun'],
     aliases: ['arezoo'],
     usages: [
@@ -129,6 +136,7 @@ export const commonWords: SeedEntry[] = [
   {
     term: 'āshegh',
     meaning: 'in love; a lover',
+    farsi: 'عاشق',
     tags: ['adjective', 'noun'],
     aliases: ['ashogh', 'ashegham'],
     usages: [
@@ -143,6 +151,7 @@ export const commonWords: SeedEntry[] = [
   {
     term: 'ashk',
     meaning: 'tear, tears',
+    farsi: 'اشک',
     tags: ['noun'],
     aliases: ['ashkayeh', 'ashkha'],
     usages: [
@@ -153,6 +162,7 @@ export const commonWords: SeedEntry[] = [
   {
     term: 'āsūn',
     meaning: 'easy',
+    farsi: 'آسون',
     tags: ['adjective'],
     aliases: ['asan', 'aasun', 'asoon'],
     usages: [
@@ -163,6 +173,7 @@ export const commonWords: SeedEntry[] = [
   {
     term: 'ātefe',
     meaning: 'affection, tenderness, emotion (also the name Atefeh)',
+    farsi: 'عاطفه',
     tags: ['noun'],
     aliases: ['atehfeh', 'atefeh'],
     usages: [
@@ -177,6 +188,7 @@ export const commonWords: SeedEntry[] = [
   {
     term: 'atr',
     meaning: 'perfume, fragrance',
+    farsi: 'عطر',
     tags: ['noun'],
     aliases: ['atre', 'atreh'],
     usages: [
@@ -217,6 +229,7 @@ export const commonWords: SeedEntry[] = [
   {
     term: 'bābā',
     meaning: 'dad; also a casual "come on!" / "oh man!"',
+    farsi: 'بابا',
     tags: ['noun'],
     note: '"baba" is the casual word for father; the formal equivalent is "pedar".',
     usages: [
@@ -227,6 +240,7 @@ export const commonWords: SeedEntry[] = [
   {
     term: 'bache',
     meaning: 'child, kid',
+    farsi: 'بچه',
     tags: ['noun'],
     aliases: ['bacheh', 'bache'],
     note: '"bache" is casual; "koodak" is the more formal word for child.',
@@ -246,6 +260,7 @@ export const commonWords: SeedEntry[] = [
   {
     term: 'bad',
     meaning: 'bad',
+    farsi: 'بد',
     tags: ['adjective'],
     usages: [
       { register: 'informal', finglish: 'halam bade', english: 'I feel bad.' },
@@ -255,6 +270,7 @@ export const commonWords: SeedEntry[] = [
   {
     term: 'bāhāl',
     meaning: 'cool, fun, enjoyable (slang)',
+    farsi: 'باحال',
     tags: ['adjective', 'slang'],
     aliases: ['bahal', 'bahaal'],
     usages: [
@@ -273,6 +289,7 @@ export const commonWords: SeedEntry[] = [
   {
     term: 'bāhūsh',
     meaning: 'smart, intelligent, clever',
+    farsi: 'باهوش',
     tags: ['adjective'],
     aliases: ['ba hoosh', 'bahush'],
     usages: [
@@ -287,6 +304,7 @@ export const commonWords: SeedEntry[] = [
   {
     term: 'bale',
     meaning: 'yes (polite)',
+    farsi: 'بله',
     tags: ['phrase'],
     aliases: ['baleh', 'areh', 'are'],
     note: '"bale" is polite; "areh" is the casual "yeah".',
@@ -298,6 +316,7 @@ export const commonWords: SeedEntry[] = [
   {
     term: 'bebakhshīd',
     meaning: 'excuse me, sorry, pardon',
+    farsi: 'ببخشید',
     tags: ['phrase'],
     aliases: ['bebakhsh', 'bbakhshid'],
     note: '"bebakhshid" is formal/polite; "bebakhsh" is the informal form.',
@@ -309,6 +328,7 @@ export const commonWords: SeedEntry[] = [
   {
     term: 'bedūn-e',
     meaning: 'without',
+    farsi: 'بدون',
     tags: ['phrase'],
     aliases: ['bedooneh', 'bedoon', 'bedune'],
     usages: [
@@ -323,6 +343,7 @@ export const commonWords: SeedEntry[] = [
   {
     term: 'be khodet biyā',
     meaning: 'pull yourself together; come to your senses',
+    farsi: 'به خودت بیا',
     tags: ['phrase'],
     aliases: ['bekhod', 'be khod', 'be khodet biya'],
     usages: [
@@ -337,6 +358,7 @@ export const commonWords: SeedEntry[] = [
   {
     term: 'bemīre',
     meaning: 'drop dead; (may he/she) die — exasperated exclamation',
+    farsi: 'بمیره',
     tags: ['phrase', 'slang', 'offensive'],
     aliases: ['bimordeh', 'bemiri', 'bemiram'],
     note: 'Ambiguous spelling; most likely the colloquial curse "bemireh/bemiri", used in mock-exasperation rather than literally. "bemiram baat" instead means "I adore you".',
@@ -356,6 +378,7 @@ export const commonWords: SeedEntry[] = [
   {
     term: 'berenj',
     meaning: 'rice (uncooked)',
+    farsi: 'برنج',
     tags: ['noun'],
     usages: [
       {
@@ -373,6 +396,7 @@ export const commonWords: SeedEntry[] = [
   {
     term: 'beshnavad',
     meaning: '(so that) he/she hears; may he/she hear — from shenidan, "to hear"',
+    farsi: 'بشنود',
     tags: ['verb'],
     aliases: ['beeshnavad', 'beshno', 'beshnave'],
     note: 'Subjunctive of "shenidan". The everyday imperative "listen!" is "beshno / goosh kon".',
@@ -392,6 +416,7 @@ export const commonWords: SeedEntry[] = [
   {
     term: 'bīkhiyāl',
     meaning: 'never mind; forget it; easy-going',
+    farsi: 'بیخیال',
     tags: ['phrase', 'slang'],
     aliases: ['bikhiyal', 'beekhiaal', 'bikhi'],
     usages: [
@@ -410,6 +435,7 @@ export const commonWords: SeedEntry[] = [
   {
     term: 'bīkhod',
     meaning: 'pointless, for no reason; uninvited',
+    farsi: 'بیخود',
     tags: ['adjective', 'slang'],
     aliases: ['beekhood', 'bikhud'],
     usages: [
@@ -428,6 +454,7 @@ export const commonWords: SeedEntry[] = [
   {
     term: 'bīsharaf',
     meaning: 'dishonorable person; scoundrel',
+    farsi: 'بیشرف',
     tags: ['noun', 'offensive'],
     aliases: ['beesharaf', 'bee sharaf'],
     note: 'A strong insult (literally "without honor").',
@@ -443,6 +470,7 @@ export const commonWords: SeedEntry[] = [
   {
     term: 'bīshūr',
     meaning: 'rude, tactless, ill-mannered',
+    farsi: 'بیشعور',
     tags: ['adjective', 'offensive'],
     aliases: ['beeshoor', 'bishur'],
     usages: [
@@ -457,6 +485,7 @@ export const commonWords: SeedEntry[] = [
   {
     term: 'bītāb',
     meaning: 'restless, impatient, eagerly longing',
+    farsi: 'بیتاب',
     tags: ['adjective'],
     aliases: ['betahb', 'bitaab'],
     usages: [
@@ -475,6 +504,7 @@ export const commonWords: SeedEntry[] = [
   {
     term: 'biyā',
     meaning: 'come (imperative)',
+    farsi: 'بیا',
     tags: ['verb'],
     aliases: ['bia'],
     note: 'Casual "biya"; the everyday-polite form is "lotfan biyaeed".',
@@ -486,6 +516,7 @@ export const commonWords: SeedEntry[] = [
   {
     term: 'boro',
     meaning: 'go (imperative)',
+    farsi: 'برو',
     tags: ['verb'],
     aliases: ['boru'],
     note: 'Casual "boro"; the everyday-polite form is "lotfan beravid".',
@@ -501,6 +532,7 @@ export const commonWords: SeedEntry[] = [
   {
     term: 'bozorg',
     meaning: 'big, large; great',
+    farsi: 'بزرگ',
     tags: ['adjective'],
     usages: [
       { register: 'informal', finglish: 'che khoone-ye bozorgi', english: 'What a big house.' },
@@ -510,6 +542,7 @@ export const commonWords: SeedEntry[] = [
   {
     term: 'chāy',
     meaning: 'tea',
+    farsi: 'چای',
     tags: ['noun'],
     aliases: ['chaei', 'chayi'],
     usages: [
@@ -521,6 +554,7 @@ export const commonWords: SeedEntry[] = [
     term: 'chākeretam',
     meaning:
       'I’m your humble servant — a warm, deferential way to say "thank you / I’m at your service"',
+    farsi: 'چاکرتم',
     tags: ['phrase'],
     aliases: ['chakere to', 'chakeret', 'nokaret', 'nokaretam', 'shakere to'],
     note: 'Affectionate ta’arof. "nokaretam" is a close synonym. Used among friends to show devotion.',
@@ -532,6 +566,7 @@ export const commonWords: SeedEntry[] = [
   {
     term: 'chand',
     meaning: 'how many, how much; a few',
+    farsi: 'چند',
     tags: ['phrase'],
     usages: [
       { register: 'informal', finglish: 'chande?', english: 'How much is it?' },
@@ -541,6 +576,7 @@ export const commonWords: SeedEntry[] = [
   {
     term: 'chekār mikoni',
     meaning: 'what are you doing?',
+    farsi: 'چیکار میکنی',
     tags: ['phrase'],
     aliases: ['chikar mikoni', 'che kar mikoni'],
     usages: [
@@ -551,6 +587,7 @@ export const commonWords: SeedEntry[] = [
   {
     term: 'cherā',
     meaning: 'why',
+    farsi: 'چرا',
     tags: ['phrase'],
     usages: [
       { register: 'informal', finglish: 'chera nayoomadi?', english: "Why didn't you come?" },
@@ -564,6 +601,7 @@ export const commonWords: SeedEntry[] = [
   {
     term: 'chert',
     meaning: 'nonsense, rubbish; (as "chort") a doze/nap',
+    farsi: 'چرت',
     tags: ['noun', 'slang'],
     aliases: ['chort', 'chrt'],
     note: '"chert nago" = stop talking nonsense. With the other vowel, "chort zadan" means to doze off.',
@@ -607,6 +645,7 @@ export const commonWords: SeedEntry[] = [
   {
     term: 'damet garm',
     meaning: 'thanks! / well done! / bravo! (lit. "may your breath be warm")',
+    farsi: 'دمت گرم',
     tags: ['phrase', 'slang'],
     aliases: ['damat garm', 'dametgarm', 'damet garmm'],
     note: 'Warm, informal gratitude or praise among friends; the formal equivalent is a plain thank-you.',
@@ -618,6 +657,7 @@ export const commonWords: SeedEntry[] = [
   {
     term: 'delam barāt tang shode',
     meaning: 'I miss you (lit. "my heart has grown tight for you")',
+    farsi: 'دلم برات تنگ شده',
     tags: ['phrase'],
     aliases: ['delam barat tang shod', 'delam barat tang shodeh'],
     usages: [
@@ -632,6 +672,7 @@ export const commonWords: SeedEntry[] = [
   {
     term: 'dīrūz',
     meaning: 'yesterday',
+    farsi: 'دیروز',
     tags: ['noun'],
     aliases: ['dirooz'],
     usages: [
@@ -646,6 +687,7 @@ export const commonWords: SeedEntry[] = [
   {
     term: 'do',
     meaning: 'two',
+    farsi: 'دو',
     tags: ['noun'],
     usages: [
       { register: 'informal', finglish: 'do ta bede', english: 'Give me two.' },
@@ -655,6 +697,7 @@ export const commonWords: SeedEntry[] = [
   {
     term: 'dokhtar',
     meaning: 'girl; daughter',
+    farsi: 'دختر',
     tags: ['noun'],
     usages: [
       { register: 'informal', finglish: 'oon dokhtar kie?', english: 'Who is that girl?' },
@@ -676,6 +719,7 @@ export const commonWords: SeedEntry[] = [
   {
     term: 'dūst',
     meaning: 'friend',
+    farsi: 'دوست',
     tags: ['noun'],
     aliases: ['dost', 'dust'],
     usages: [
@@ -711,6 +755,7 @@ export const commonWords: SeedEntry[] = [
   {
     term: 'edāme',
     meaning: 'continuation; "edame bede" = keep going',
+    farsi: 'ادامه',
     tags: ['noun'],
     aliases: ['edameh', 'edame bede'],
     usages: [
@@ -721,6 +766,7 @@ export const commonWords: SeedEntry[] = [
   {
     term: 'edārī',
     meaning: 'administrative; office-related',
+    farsi: 'اداری',
     tags: ['adjective'],
     usages: [
       {
@@ -738,6 +784,7 @@ export const commonWords: SeedEntry[] = [
   {
     term: 'ehtiyāj',
     meaning: 'need; "ehtiaj daram" = I need',
+    farsi: 'احتیاج',
     tags: ['noun'],
     aliases: ['ehtiyaj', 'ehtiaaj'],
     usages: [
@@ -752,6 +799,7 @@ export const commonWords: SeedEntry[] = [
   {
     term: 'ejāze',
     meaning: 'permission; "ejaze midi?" = may I?',
+    farsi: 'اجازه',
     tags: ['noun'],
     aliases: ['ejazeh', 'ejaze midi'],
     usages: [
@@ -762,6 +810,7 @@ export const commonWords: SeedEntry[] = [
   {
     term: 'elāhī',
     meaning: 'divine; also a tender exclamation "oh, bless you / oh dear"',
+    farsi: 'الهی',
     tags: ['phrase'],
     aliases: ['elahee', 'elaahi'],
     note: 'As an exclamation it conveys sympathy or affection, e.g. "elahi ghorbunet beram".',
@@ -773,6 +822,7 @@ export const commonWords: SeedEntry[] = [
   {
     term: 'emkān',
     meaning: 'possibility; "emkan dare?" = is it possible?',
+    farsi: 'امکان',
     tags: ['noun'],
     aliases: ['emkam', 'emkaan'],
     note: 'The spelling "emkam" is most likely "emkan".',
@@ -792,6 +842,7 @@ export const commonWords: SeedEntry[] = [
   {
     term: 'emrūz',
     meaning: 'today',
+    farsi: 'امروز',
     tags: ['noun'],
     aliases: ['emrooz'],
     usages: [
@@ -810,6 +861,7 @@ export const commonWords: SeedEntry[] = [
   {
     term: 'eshgh',
     meaning: 'love; "eshgham" = my love',
+    farsi: 'عشق',
     tags: ['noun'],
     aliases: ['esghgh', 'eshgham', 'eshq'],
     usages: [
@@ -828,6 +880,7 @@ export const commonWords: SeedEntry[] = [
   {
     term: 'etebār',
     meaning: 'trust; credit, credibility',
+    farsi: 'اعتبار',
     tags: ['noun'],
     aliases: ['ehtemad', 'etemad'],
     note: 'The spelling "ehtemad" most likely means "etemad" (trust).',
@@ -839,6 +892,7 @@ export const commonWords: SeedEntry[] = [
   {
     term: "e'teraz",
     meaning: 'objection, protest',
+    farsi: 'اعتراض',
     tags: ['noun'],
     aliases: ['ehteraz', 'eteraz'],
     usages: [
@@ -849,6 +903,7 @@ export const commonWords: SeedEntry[] = [
   {
     term: 'ettefāghan',
     meaning: 'actually; as it happens; by coincidence',
+    farsi: 'اتفاقاً',
     tags: ['phrase'],
     aliases: ['ekhtefaghan', 'etefaghan', 'ettefaaghan'],
     usages: [
@@ -867,6 +922,7 @@ export const commonWords: SeedEntry[] = [
   {
     term: 'ehsās',
     meaning: 'feeling, sense; "ehsas mikonam / hes mikonam" = I feel',
+    farsi: 'احساس',
     tags: ['noun'],
     aliases: ['ehsas konam', 'hess konam', 'hes mikonam', 'ehsaas'],
     usages: [
@@ -877,6 +933,7 @@ export const commonWords: SeedEntry[] = [
   {
     term: 'fake',
     meaning: 'fake, insincere (English loanword used in Finglish slang)',
+    farsi: 'فیک',
     tags: ['adjective', 'slang'],
     note: 'Borrowed straight from English; common among younger speakers. A native synonym is "ghalabi".',
     usages: [
@@ -887,6 +944,7 @@ export const commonWords: SeedEntry[] = [
   {
     term: 'farāmūsham kon',
     meaning: 'forget me',
+    farsi: 'فراموشم کن',
     tags: ['phrase'],
     aliases: ['faramusham kon'],
     usages: [
@@ -897,6 +955,7 @@ export const commonWords: SeedEntry[] = [
   {
     term: 'fardā',
     meaning: 'tomorrow',
+    farsi: 'فردا',
     tags: ['noun'],
     usages: [
       { register: 'informal', finglish: 'farda mibinamet', english: 'See you tomorrow.' },
@@ -906,6 +965,7 @@ export const commonWords: SeedEntry[] = [
   {
     term: 'fohsh',
     meaning: 'a swear word, insult; "fohsh dadan" = to curse at someone',
+    farsi: 'فحش',
     tags: ['noun'],
     aliases: ['fosh', 'fosht', 'fohsh dadan'],
     usages: [
@@ -916,6 +976,7 @@ export const commonWords: SeedEntry[] = [
   {
     term: 'forūsh',
     meaning: 'sale, selling; "beforush" = sell it',
+    farsi: 'فروش',
     tags: ['noun'],
     aliases: ['forsh bedeh', 'foroosh', 'forush bede'],
     note: 'Reading "forsh bedeh" as "forush/beforoosh" (to sell). If you meant cursing, see "fohsh".',
@@ -931,6 +992,7 @@ export const commonWords: SeedEntry[] = [
   {
     term: 'gāeede',
     meaning: 'vulgar past form of the verb "to f***" (gāyidan)',
+    farsi: 'گاییده',
     tags: ['verb', 'vulgar', 'offensive'],
     aliases: ['gayiedeh', 'gaeedeh', 'gaide'],
     note: 'Extremely vulgar and offensive. Listed for understanding only; avoid using it. The figurative "gaeede shod" can mean "it got ruined / I’m screwed".',
@@ -950,6 +1012,7 @@ export const commonWords: SeedEntry[] = [
   {
     term: 'ghabūl',
     meaning: 'accepted, agreed; "ghaboole" = it’s a deal',
+    farsi: 'قبول',
     tags: ['adjective'],
     aliases: ['ghabul', 'ghabool dari', 'qabul'],
     usages: [
@@ -960,6 +1023,7 @@ export const commonWords: SeedEntry[] = [
   {
     term: 'ghafas',
     meaning: 'cage',
+    farsi: 'قفس',
     tags: ['noun'],
     aliases: ['ghafass', 'qafas'],
     usages: [
@@ -974,6 +1038,7 @@ export const commonWords: SeedEntry[] = [
   {
     term: 'ghalyūn',
     meaning: 'hookah, water pipe (qalyan)',
+    farsi: 'قلیون',
     tags: ['noun'],
     aliases: ['ghaliyoon', 'ghalyan', 'qalyan'],
     usages: [
@@ -984,6 +1049,7 @@ export const commonWords: SeedEntry[] = [
   {
     term: 'gharūr',
     meaning: 'pride, arrogance; "maghroor" = proud/arrogant',
+    farsi: 'غرور',
     tags: ['noun'],
     aliases: ['ghoroor', 'ghorur', 'qorur'],
     note: 'Can be positive (self-respect) or negative (arrogance) depending on context.',
@@ -1003,6 +1069,7 @@ export const commonWords: SeedEntry[] = [
   {
     term: 'ghashang',
     meaning: 'pretty, beautiful, nice',
+    farsi: 'قشنگ',
     tags: ['adjective'],
     aliases: ['qashang'],
     usages: [
@@ -1013,6 +1080,7 @@ export const commonWords: SeedEntry[] = [
   {
     term: 'ghātī',
     meaning: 'mixed up, confused; (slang) unhinged',
+    farsi: 'قاطی',
     tags: ['adjective', 'slang'],
     aliases: ['qati', 'ghaati'],
     usages: [
@@ -1031,6 +1099,7 @@ export const commonWords: SeedEntry[] = [
   {
     term: 'ghazā',
     meaning: 'food, meal',
+    farsi: 'غذا',
     tags: ['noun'],
     aliases: ['qaza', 'ghazaa'],
     usages: [
@@ -1041,6 +1110,7 @@ export const commonWords: SeedEntry[] = [
   {
     term: 'ghūl',
     meaning: 'giant, ogre; "ghoole" = it’s a giant',
+    farsi: 'غول',
     tags: ['noun'],
     aliases: ['ghooleh', 'ghul', 'qul'],
     note: 'Note: "ghol/ghowl" with a different spelling means "a promise".',
@@ -1052,6 +1122,7 @@ export const commonWords: SeedEntry[] = [
   {
     term: 'ghorbūnet beram',
     meaning: 'an endearment: "I’d sacrifice myself for you" (≈ "you’re so dear to me")',
+    farsi: 'قربونت برم',
     tags: ['phrase'],
     aliases: ['ghorboon', 'ghorbanet', 'ghorbunet beram', 'ghorboonet'],
     note: 'Very common ta’arof of affection or thanks; not literal.',
@@ -1071,6 +1142,7 @@ export const commonWords: SeedEntry[] = [
   {
     term: 'gorosne',
     meaning: 'hungry',
+    farsi: 'گرسنه',
     tags: ['adjective'],
     aliases: ['gorosneh', 'goshne', 'gorosna'],
     usages: [
@@ -1081,6 +1153,7 @@ export const commonWords: SeedEntry[] = [
   {
     term: 'gūsht',
     meaning: 'meat',
+    farsi: 'گوشت',
     tags: ['noun'],
     aliases: ['goosht'],
     usages: [
@@ -1091,6 +1164,7 @@ export const commonWords: SeedEntry[] = [
   {
     term: 'habs',
     meaning: 'prison, imprisonment; "habs kardan" = to imprison',
+    farsi: 'حبس',
     tags: ['noun'],
     aliases: ['haps', 'habss'],
     usages: [
@@ -1105,6 +1179,7 @@ export const commonWords: SeedEntry[] = [
   {
     term: 'hadeaghal',
     meaning: 'at least; minimum',
+    farsi: 'حداقل',
     tags: ['phrase'],
     aliases: ['haghdaghal', 'hadaghal', 'haddeaghal'],
     usages: [
@@ -1123,6 +1198,7 @@ export const commonWords: SeedEntry[] = [
   {
     term: 'harekat',
     meaning: 'movement, action, gesture; (slang) "a move / a stunt"',
+    farsi: 'حرکت',
     tags: ['noun', 'slang'],
     aliases: ['harikat', 'harifikat', 'herekat'],
     usages: [
@@ -1133,6 +1209,7 @@ export const commonWords: SeedEntry[] = [
   {
     term: 'hayāt',
     meaning: 'courtyard, yard; (different word) life',
+    farsi: 'حیاط',
     tags: ['noun'],
     aliases: ['hayaat'],
     note: 'Two senses by vowel: "hayat" = yard, "hayāt" = life.',
@@ -1182,6 +1259,7 @@ export const commonWords: SeedEntry[] = [
   {
     term: 'jalāl',
     meaning: 'glory, splendor, majesty (also a given name)',
+    farsi: 'جلال',
     tags: ['noun'],
     usages: [
       { register: 'informal', finglish: 'che jalali', english: 'What splendor.' },
@@ -1191,6 +1269,7 @@ export const commonWords: SeedEntry[] = [
   {
     term: 'jān',
     meaning: 'dear, life, soul; an affectionate suffix (e.g., "Ali-jan")',
+    farsi: 'جان',
     tags: ['noun'],
     aliases: ['joon', 'joon', 'jaan'],
     usages: [
@@ -1205,6 +1284,7 @@ export const commonWords: SeedEntry[] = [
   {
     term: 'jorm',
     meaning: 'crime, offense',
+    farsi: 'جرم',
     tags: ['noun'],
     usages: [
       { register: 'informal', finglish: 'in ke jorm nist', english: "That's not a crime." },
@@ -1214,6 +1294,7 @@ export const commonWords: SeedEntry[] = [
   {
     term: 'kār',
     meaning: 'work, job, task',
+    farsi: 'کار',
     tags: ['noun'],
     usages: [
       { register: 'informal', finglish: 'sar-e karam', english: 'I am at work.' },
@@ -1223,6 +1304,7 @@ export const commonWords: SeedEntry[] = [
   {
     term: 'kelīd',
     meaning: 'key',
+    farsi: 'کلید',
     tags: ['noun'],
     usages: [
       { register: 'informal', finglish: 'kelid ro gom kardam', english: 'I lost the key.' },
@@ -1232,6 +1314,7 @@ export const commonWords: SeedEntry[] = [
   {
     term: 'ketāb',
     meaning: 'book',
+    farsi: 'کتاب',
     tags: ['noun'],
     aliases: ['ketaab'],
     usages: [
@@ -1246,6 +1329,7 @@ export const commonWords: SeedEntry[] = [
   {
     term: 'khaste',
     meaning: 'tired; "khaste nabashi" = "well done / thanks for your effort"',
+    farsi: 'خسته',
     tags: ['adjective'],
     aliases: ['khasteh', 'khaste nabashi'],
     usages: [
@@ -1256,6 +1340,7 @@ export const commonWords: SeedEntry[] = [
   {
     term: 'khatarnāk',
     meaning: 'dangerous',
+    farsi: 'خطرناک',
     tags: ['adjective'],
     aliases: ['khatarnaki', 'khatarnaak'],
     usages: [
@@ -1274,6 +1359,7 @@ export const commonWords: SeedEntry[] = [
   {
     term: 'khātere',
     meaning: 'memory, recollection',
+    farsi: 'خاطره',
     tags: ['noun'],
     aliases: ['khaterah', 'khatereh'],
     usages: [
@@ -1292,6 +1378,7 @@ export const commonWords: SeedEntry[] = [
   {
     term: 'khedmat',
     meaning: 'service; "dar khedmatetoon" = at your service',
+    farsi: 'خدمت',
     tags: ['noun'],
     aliases: ['khetmatoon', 'khedmatetoon', 'khedmatoon'],
     usages: [
@@ -1306,6 +1393,7 @@ export const commonWords: SeedEntry[] = [
   {
     term: 'khejālat bekesh',
     meaning: 'shame on you; be ashamed',
+    farsi: 'خجالت بکش',
     tags: ['phrase'],
     aliases: ['jalat bekesh', 'khejalat bekesh', 'khejalat'],
     usages: [
@@ -1316,6 +1404,7 @@ export const commonWords: SeedEntry[] = [
   {
     term: 'khiyāl',
     meaning: 'thought, imagination, notion; "khiyalet rahat" = rest assured',
+    farsi: 'خیال',
     tags: ['noun'],
     aliases: ['khial', 'khiaal'],
     usages: [
@@ -1362,6 +1451,7 @@ export const commonWords: SeedEntry[] = [
   {
     term: 'khoshhāl',
     meaning: 'happy, glad',
+    farsi: 'خوشحال',
     tags: ['adjective'],
     aliases: ['khoshhaal', 'khoshhaal'],
     usages: [
@@ -1394,6 +1484,7 @@ export const commonWords: SeedEntry[] = [
   {
     term: 'khūne',
     meaning: 'house, home',
+    farsi: 'خونه',
     tags: ['noun'],
     aliases: ['khaneh', 'khoone', 'khane'],
     note: '"khoone" is the casual pronunciation; "khane/manzel" is more formal.',
@@ -1405,6 +1496,7 @@ export const commonWords: SeedEntry[] = [
   {
     term: 'khānegī',
     meaning: 'homemade; domestic, home-based',
+    farsi: 'خانگی',
     tags: ['adjective'],
     aliases: ['khoonegi', 'khunegi', 'khanegui'],
     usages: [
@@ -1423,6 +1515,7 @@ export const commonWords: SeedEntry[] = [
   {
     term: 'khāhesh mikonam',
     meaning: 'you’re welcome; please (when requesting)',
+    farsi: 'خواهش میکنم',
     tags: ['phrase'],
     aliases: ['khahesh mikonam', 'khaahesh mikonam'],
     usages: [
@@ -1441,6 +1534,7 @@ export const commonWords: SeedEntry[] = [
   {
     term: 'khosh āmadīd',
     meaning: 'welcome',
+    farsi: 'خوش آمدید',
     tags: ['phrase', 'greeting'],
     aliases: ['khosh oomadi', 'khosh amadi', 'khosh oomadid'],
     usages: [
@@ -1451,6 +1545,7 @@ export const commonWords: SeedEntry[] = [
   {
     term: 'kī',
     meaning: 'who; (also "key") when',
+    farsi: 'کی',
     tags: ['phrase'],
     aliases: ['key'],
     usages: [
@@ -1461,6 +1556,7 @@ export const commonWords: SeedEntry[] = [
   {
     term: 'kojā',
     meaning: 'where',
+    farsi: 'کجا',
     tags: ['phrase'],
     aliases: ['kojaa'],
     usages: [
@@ -1475,6 +1571,7 @@ export const commonWords: SeedEntry[] = [
   {
     term: 'kūdak',
     meaning: 'child, infant',
+    farsi: 'کودک',
     tags: ['noun'],
     aliases: ['kudak', 'koudak'],
     usages: [
@@ -1485,6 +1582,7 @@ export const commonWords: SeedEntry[] = [
   {
     term: 'kūche',
     meaning: 'alley, lane, side street',
+    farsi: 'کوچه',
     tags: ['noun'],
     aliases: ['koocheh', 'koche', 'kucheh'],
     usages: [
@@ -1503,6 +1601,7 @@ export const commonWords: SeedEntry[] = [
   {
     term: 'kūchīk',
     meaning: 'small, little',
+    farsi: 'کوچیک',
     tags: ['adjective'],
     aliases: ['koochik', 'kuchak', 'koochak'],
     usages: [
@@ -1517,6 +1616,7 @@ export const commonWords: SeedEntry[] = [
   {
     term: 'lāmasab',
     meaning: 'you wretch / you devil (mild curse, often playful; lit. "without faith")',
+    farsi: 'لامصب',
     tags: ['phrase', 'slang'],
     aliases: ['lamasad', 'lamasb', 'lamazhab'],
     note: 'Mild and often affectionate-exasperated, like "you rascal".',
@@ -1536,6 +1636,7 @@ export const commonWords: SeedEntry[] = [
   {
     term: "la'nat",
     meaning: 'damn, curse; "la’nati" = damned (one)',
+    farsi: 'لعنت',
     tags: ['phrase', 'offensive'],
     aliases: ['lahnat', 'lanat', 'lanati', 'lahnati', 'laanat'],
     note: 'A curse word; "la’nat be..." = "damn...". Moderately strong.',
@@ -1547,6 +1648,7 @@ export const commonWords: SeedEntry[] = [
   {
     term: 'lāle',
     meaning: 'tulip (also a given name)',
+    farsi: 'لاله',
     tags: ['noun'],
     aliases: ['lale'],
     usages: [
@@ -1595,8 +1697,28 @@ export const commonWords: SeedEntry[] = [
     ],
   },
   {
+    term: 'majbur',
+    meaning: 'compelled, obligated, forced',
+    farsi: 'مجبور',
+    tags: ['adjective'],
+    aliases: ['majboor'],
+    usages: [
+      {
+        register: 'informal',
+        finglish: 'majburam beram',
+        english: 'I have to go.',
+      },
+      {
+        register: 'formal',
+        finglish: 'majbur hastam ke beravam',
+        english: 'I am obligated to go.',
+      },
+    ],
+  },
+  {
     term: 'māmān',
     meaning: 'mom, mum',
+    farsi: 'مامان',
     tags: ['noun'],
     aliases: ['maaman'],
     note: '"maman" is casual; "madar" is the formal word for mother.',
@@ -1639,6 +1761,7 @@ export const commonWords: SeedEntry[] = [
   {
     term: 'mard',
     meaning: 'man',
+    farsi: 'مرد',
     tags: ['noun'],
     usages: [
       { register: 'informal', finglish: 'mard-e khoobiye', english: 'He is a good man.' },
@@ -1648,6 +1771,7 @@ export const commonWords: SeedEntry[] = [
   {
     term: 'marg',
     meaning: 'death; "marget" = "your death" (used in curses)',
+    farsi: 'مرگ',
     tags: ['noun', 'offensive'],
     aliases: ['margeht', 'marget', 'margh'],
     note: '"marg bar..." = "death to...". "margeht/marget" is rude; here the polite version simply asks for quiet.',
@@ -1659,6 +1783,7 @@ export const commonWords: SeedEntry[] = [
   {
     term: 'māshīn',
     meaning: 'car; machine',
+    farsi: 'ماشین',
     tags: ['noun'],
     aliases: ['maashin'],
     usages: [
@@ -1673,6 +1798,7 @@ export const commonWords: SeedEntry[] = [
   {
     term: 'mast',
     meaning: 'drunk; (also "mast" = yogurt)',
+    farsi: 'مست',
     tags: ['adjective'],
     aliases: ['mast shodi', 'mast shodee'],
     note: '"mast shodi" = you got drunk. The identical spelling "mast" also means yogurt.',
@@ -1705,6 +1831,7 @@ export const commonWords: SeedEntry[] = [
   {
     term: 'mīsāze',
     meaning: 'it agrees with / suits (me); "nemisaze" = it doesn’t agree with me',
+    farsi: 'میسازه',
     tags: ['verb'],
     aliases: ['nemisaze', 'misazeh', 'nemisazeh'],
     note: 'Used for food, weather, or situations that do or don’t suit one.',
@@ -1724,6 +1851,7 @@ export const commonWords: SeedEntry[] = [
   {
     term: 'montazer',
     meaning: 'waiting; "montazeram" = I’m waiting',
+    farsi: 'منتظر',
     tags: ['adjective'],
     aliases: ['montazerah', 'montazeram', 'montazere'],
     usages: [
@@ -1738,6 +1866,7 @@ export const commonWords: SeedEntry[] = [
   {
     term: 'moteasefāne',
     meaning: 'unfortunately',
+    farsi: 'متأسفانه',
     tags: ['phrase'],
     aliases: ['mortasefaneh', 'moteasefaneh', 'motasefane'],
     usages: [
@@ -1756,6 +1885,7 @@ export const commonWords: SeedEntry[] = [
   {
     term: 'motenafer',
     meaning: 'disgusted, loathing; "motenaferam" = I loathe it',
+    farsi: 'متنفر',
     tags: ['adjective'],
     aliases: ['motanaferam', 'motenaferam', 'motenafser'],
     usages: [
@@ -1766,6 +1896,7 @@ export const commonWords: SeedEntry[] = [
   {
     term: 'mojavvez',
     meaning: 'permit, license, authorization',
+    farsi: 'مجوز',
     tags: ['noun'],
     aliases: ['mojaveh', 'mojavez', 'mojavvaz'],
     note: 'Reading the ambiguous "mojaveh" as "mojavvez" (permit).',
@@ -1777,6 +1908,7 @@ export const commonWords: SeedEntry[] = [
   {
     term: 'mūshak',
     meaning: 'missile, rocket',
+    farsi: 'موشک',
     tags: ['noun'],
     aliases: ['moshak', 'mushak'],
     usages: [
@@ -1795,6 +1927,7 @@ export const commonWords: SeedEntry[] = [
   {
     term: 'mordeshūr',
     meaning: 'corpse-washer; used in the strong curse "mordeshooreto bebaran"',
+    farsi: 'مردشور',
     tags: ['noun', 'offensive'],
     aliases: ['mordehshoor', 'mordeshoor', 'mordeshooreto'],
     note: 'Part of a harsh traditional curse; here the polite version simply states the situation is awful.',
@@ -1814,6 +1947,7 @@ export const commonWords: SeedEntry[] = [
   {
     term: 'na',
     meaning: 'no',
+    farsi: 'نه',
     tags: ['phrase'],
     usages: [
       { register: 'informal', finglish: 'na baba', english: 'No, thanks.' },
@@ -1823,6 +1957,7 @@ export const commonWords: SeedEntry[] = [
   {
     term: 'nān',
     meaning: 'bread',
+    farsi: 'نان',
     tags: ['noun'],
     aliases: ['noon', 'naan'],
     note: '"noon" is the casual pronunciation of "nan".',
@@ -1834,6 +1969,7 @@ export const commonWords: SeedEntry[] = [
   {
     term: 'nārāhat',
     meaning: 'upset, sad, uncomfortable',
+    farsi: 'ناراحت',
     tags: ['adjective'],
     aliases: ['naraahat'],
     usages: [
@@ -1844,6 +1980,7 @@ export const commonWords: SeedEntry[] = [
   {
     term: 'nashe',
     meaning: 'high, intoxicated; "nashe shodi" = you got high',
+    farsi: 'نشئه',
     tags: ['adjective', 'slang'],
     aliases: ['nasheh', 'nasheh shodee', 'nashe shodi'],
     usages: [
@@ -1854,6 +1991,7 @@ export const commonWords: SeedEntry[] = [
   {
     term: 'ū',
     meaning: 'he, she',
+    farsi: 'او',
     tags: ['noun'],
     aliases: ['u'],
     note: '"oo" is neutral; "ishan" is the polite/honorific third person.',
@@ -1869,6 +2007,7 @@ export const commonWords: SeedEntry[] = [
   {
     term: 'oskol',
     meaning: 'dimwit, idiot (slang insult)',
+    farsi: 'اسکل',
     tags: ['noun', 'slang', 'offensive'],
     aliases: ['osgal', 'oskal', 'oskul'],
     note: 'Casual insult among friends; still rude to strangers.',
@@ -1884,6 +2023,7 @@ export const commonWords: SeedEntry[] = [
   {
     term: 'pāk',
     meaning: 'clean, pure; "pak kardan" = to erase/clean',
+    farsi: 'پاک',
     tags: ['adjective', 'verb'],
     aliases: ['paak'],
     usages: [
@@ -1898,6 +2038,7 @@ export const commonWords: SeedEntry[] = [
   {
     term: 'parvāne',
     meaning: 'butterfly; also a license (e.g., business permit), and a given name',
+    farsi: 'پروانه',
     tags: ['noun'],
     aliases: ['parvaneh'],
     usages: [
@@ -1916,6 +2057,7 @@ export const commonWords: SeedEntry[] = [
   {
     term: 'pedar',
     meaning: 'father',
+    farsi: 'پدر',
     tags: ['noun'],
     note: '"baba" is the casual word; "pedar" is the formal word for father.',
     usages: [
@@ -1926,6 +2068,7 @@ export const commonWords: SeedEntry[] = [
   {
     term: 'pesar',
     meaning: 'boy; son',
+    farsi: 'پسر',
     tags: ['noun'],
     usages: [
       { register: 'informal', finglish: 'pesar-e khoobiye', english: 'He is a good boy.' },
@@ -1935,6 +2078,7 @@ export const commonWords: SeedEntry[] = [
   {
     term: 'pūl',
     meaning: 'money',
+    farsi: 'پول',
     tags: ['noun'],
     aliases: ['pul'],
     usages: [
@@ -1945,6 +2089,7 @@ export const commonWords: SeedEntry[] = [
   {
     term: 'porrū',
     meaning: 'cheeky, insolent, shameless',
+    farsi: 'پررو',
     tags: ['adjective', 'slang'],
     aliases: ['poro', 'porru', 'poroo'],
     usages: [
@@ -1959,6 +2104,7 @@ export const commonWords: SeedEntry[] = [
   {
     term: "ro'yat",
     meaning: 'sighting, viewing; "ghabel-e ro’yat" = visible',
+    farsi: 'رؤیت',
     tags: ['noun'],
     aliases: ['royat', 'roeyat'],
     note: 'Formal word for "seeing/observing". Note "roya" (with no glottal stop) means "dream".',
@@ -1970,6 +2116,7 @@ export const commonWords: SeedEntry[] = [
   {
     term: 'royā',
     meaning: 'dream (also a given name)',
+    farsi: 'رؤیا',
     tags: ['noun'],
     aliases: ['roia', 'rouya'],
     usages: [
@@ -1984,6 +2131,7 @@ export const commonWords: SeedEntry[] = [
   {
     term: 'rūz',
     meaning: 'day',
+    farsi: 'روز',
     tags: ['noun'],
     aliases: ['ruz'],
     usages: [
@@ -1998,6 +2146,7 @@ export const commonWords: SeedEntry[] = [
   {
     term: 'sāat',
     meaning: 'hour; clock; watch',
+    farsi: 'ساعت',
     tags: ['noun'],
     aliases: ['saaat'],
     usages: [
@@ -2008,6 +2157,7 @@ export const commonWords: SeedEntry[] = [
   {
     term: 'sāde',
     meaning: 'simple, plain; naive',
+    farsi: 'ساده',
     tags: ['adjective'],
     aliases: ['sadeh', 'saade'],
     usages: [
@@ -2018,6 +2168,7 @@ export const commonWords: SeedEntry[] = [
   {
     term: 'safar',
     meaning: 'trip, journey, travel',
+    farsi: 'سفر',
     tags: ['noun'],
     usages: [
       { register: 'informal', finglish: 'safar khosh begzare', english: 'Have a nice trip.' },
@@ -2052,6 +2203,7 @@ export const commonWords: SeedEntry[] = [
   {
     term: 'sardār',
     meaning: 'commander, general (military leader)',
+    farsi: 'سردار',
     tags: ['noun'],
     aliases: ['sardaar'],
     usages: [
@@ -2070,6 +2222,7 @@ export const commonWords: SeedEntry[] = [
   {
     term: 'se',
     meaning: 'three',
+    farsi: 'سه',
     tags: ['noun'],
     aliases: ['seh'],
     usages: [
@@ -2080,6 +2233,7 @@ export const commonWords: SeedEntry[] = [
   {
     term: 'shab',
     meaning: 'night',
+    farsi: 'شب',
     tags: ['noun'],
     aliases: ['shab bekheir', 'shab bekheyr'],
     usages: [
@@ -2090,6 +2244,7 @@ export const commonWords: SeedEntry[] = [
   {
     term: 'shavad',
     meaning: '(it) becomes; may it be — formal of shodan; colloquial "beshe"',
+    farsi: 'شود',
     tags: ['verb'],
     aliases: ['beshe', 'shaved'],
     usages: [
@@ -2108,6 +2263,7 @@ export const commonWords: SeedEntry[] = [
   {
     term: 'shīr',
     meaning: 'milk; (also) lion; faucet',
+    farsi: 'شیر',
     tags: ['noun'],
     usages: [
       { register: 'informal', finglish: 'shir mikhori?', english: 'Would you like some milk?' },
@@ -2117,6 +2273,7 @@ export const commonWords: SeedEntry[] = [
   {
     term: "sho'le",
     meaning: 'flame (also "sholeh", a kind of porridge/dessert)',
+    farsi: 'شعله',
     tags: ['noun'],
     aliases: ['sholeh', 'shole'],
     usages: [
@@ -2135,6 +2292,7 @@ export const commonWords: SeedEntry[] = [
   {
     term: 'shomā',
     meaning: 'you (formal or plural)',
+    farsi: 'شما',
     tags: ['noun'],
     usages: [
       { register: 'informal', finglish: 'nazaret chie?', english: 'What is your opinion?' },
@@ -2144,6 +2302,7 @@ export const commonWords: SeedEntry[] = [
   {
     term: 'shotor',
     meaning: 'camel',
+    farsi: 'شتر',
     tags: ['noun'],
     aliases: ['shotur'],
     usages: [
@@ -2162,6 +2321,7 @@ export const commonWords: SeedEntry[] = [
   {
     term: 'siyāh',
     meaning: 'black',
+    farsi: 'سیاه',
     tags: ['adjective'],
     aliases: ['siyah'],
     usages: [
@@ -2176,6 +2336,7 @@ export const commonWords: SeedEntry[] = [
   {
     term: 'sobh bekheyr',
     meaning: 'good morning',
+    farsi: 'صبح بخیر',
     tags: ['phrase', 'greeting'],
     aliases: ['sobh bekheir', 'sobh bxeir'],
     usages: [
@@ -2186,6 +2347,7 @@ export const commonWords: SeedEntry[] = [
   {
     term: 'sūrākh',
     meaning: 'hole, opening',
+    farsi: 'سوراخ',
     tags: ['noun'],
     aliases: ['surakh', 'soraakh'],
     usages: [
@@ -2200,6 +2362,7 @@ export const commonWords: SeedEntry[] = [
   {
     term: 'tākhīr',
     meaning: 'delay; (also "taghir" = change)',
+    farsi: 'تأخیر',
     tags: ['noun'],
     aliases: ['takir', 'taakhir', 'taghir'],
     note: 'Reading "takir" as "ta’khir" (delay). If you meant "taghir", that means "change".',
@@ -2211,6 +2374,7 @@ export const commonWords: SeedEntry[] = [
   {
     term: 'tāblo',
     meaning: 'sign, board; (slang) obvious, conspicuous',
+    farsi: 'تابلو',
     tags: ['noun', 'slang'],
     aliases: ['tablo ist', 'tabloo', 'tablo-e ist'],
     note: '"tablo-e ist" = a stop sign. As slang, "tabloee" = you’re being too obvious.',
@@ -2226,6 +2390,7 @@ export const commonWords: SeedEntry[] = [
   {
     term: 'tahvīl',
     meaning: 'delivery, handover; "tahvil gereftan" = to welcome / pay attention to someone',
+    farsi: 'تحویل',
     tags: ['noun'],
     aliases: ['tahil', 'tahvil gereftan'],
     note: 'Reading the ambiguous "tahil" as "tahvil". A near-homophone "tahlil" means "analysis".',
@@ -2245,6 +2410,7 @@ export const commonWords: SeedEntry[] = [
   {
     term: 'tanbal',
     meaning: 'lazy',
+    farsi: 'تنبل',
     tags: ['adjective'],
     aliases: ['tambal'],
     usages: [
@@ -2255,6 +2421,7 @@ export const commonWords: SeedEntry[] = [
   {
     term: 'tekke',
     meaning: 'a piece, chunk; (slang) a witty jab ("tikke andakhtan")',
+    farsi: 'تکه',
     tags: ['noun', 'slang'],
     aliases: ['takkeh', 'tikke', 'teke'],
     usages: [
@@ -2273,6 +2440,7 @@ export const commonWords: SeedEntry[] = [
   {
     term: 'teshne',
     meaning: 'thirsty',
+    farsi: 'تشنه',
     tags: ['adjective'],
     aliases: ['teshneh', 'teshna'],
     usages: [
@@ -2283,6 +2451,7 @@ export const commonWords: SeedEntry[] = [
   {
     term: 'to',
     meaning: 'you (informal singular)',
+    farsi: 'تو',
     tags: ['noun'],
     aliases: ['toh'],
     usages: [
@@ -2297,6 +2466,7 @@ export const commonWords: SeedEntry[] = [
   {
     term: 'vahshatnāk',
     meaning: 'terrifying, horrible; (slang) terribly, intensely',
+    farsi: 'وحشتناک',
     tags: ['adjective', 'slang'],
     aliases: ['vashatnak', 'vahshatnaak'],
     usages: [
@@ -2315,6 +2485,7 @@ export const commonWords: SeedEntry[] = [
   {
     term: 'vasīle',
     meaning: 'tool, device, means, thing',
+    farsi: 'وسیله',
     tags: ['noun'],
     aliases: ['vaseereh', 'vasileh', 'vasle'],
     note: 'Reading the ambiguous "vaseereh" as "vasile" (tool/means).',
@@ -2326,6 +2497,7 @@ export const commonWords: SeedEntry[] = [
   {
     term: 'vasī',
     meaning: 'wide, vast, spacious',
+    farsi: 'وسیع',
     tags: ['adjective'],
     aliases: ['vasieh', 'vasi’', 'vasee'],
     note: 'Reading the ambiguous "vasieh" as "vasi’" (wide). A look-alike "vasiyat" means "a will/testament".',
@@ -2337,6 +2509,7 @@ export const commonWords: SeedEntry[] = [
   {
     term: 'yār',
     meaning: 'companion, partner, beloved; teammate',
+    farsi: 'یار',
     tags: ['noun'],
     aliases: ['yaar'],
     usages: [
@@ -2351,6 +2524,7 @@ export const commonWords: SeedEntry[] = [
   {
     term: 'yek',
     meaning: 'one',
+    farsi: 'یک',
     tags: ['noun'],
     aliases: ['ye', 'yeki'],
     usages: [
@@ -2361,6 +2535,7 @@ export const commonWords: SeedEntry[] = [
   {
     term: 'zahmat',
     meaning: 'trouble, effort; "bi zahmat" = please / if you don’t mind',
+    farsi: 'زحمت',
     tags: ['noun'],
     aliases: ['zahmad', 'zahmate', 'zahmat keshidi'],
     usages: [
@@ -2371,6 +2546,7 @@ export const commonWords: SeedEntry[] = [
   {
     term: 'zahremār',
     meaning: 'snake venom — an interjection like "shut up! / damn it!"',
+    farsi: 'زهرمار',
     tags: ['phrase', 'slang', 'offensive'],
     aliases: ['zahreh mar', 'zahre mar', 'zahlimordeh', 'zahremaar'],
     note: 'Rude/dismissive. Sometimes snapped to brush someone off. "zahlimordeh" is treated as a related scolding; the polite version simply asks them to stop.',
@@ -2382,6 +2558,7 @@ export const commonWords: SeedEntry[] = [
   {
     term: 'zakhm',
     meaning: 'wound, injury, sore',
+    farsi: 'زخم',
     tags: ['noun'],
     usages: [
       { register: 'informal', finglish: 'zakhmet khoob shod?', english: 'Did your wound heal?' },
@@ -2395,6 +2572,7 @@ export const commonWords: SeedEntry[] = [
   {
     term: 'zālū',
     meaning: 'leech; (figurative) a clingy, exploitative person',
+    farsi: 'زالو',
     tags: ['noun'],
     aliases: ['zaloheh', 'zaloo', 'zalou'],
     note: 'Reading the ambiguous "zaloheh" as "zalu" (leech).',
@@ -2410,6 +2588,7 @@ export const commonWords: SeedEntry[] = [
   {
     term: 'zan',
     meaning: 'woman; wife',
+    farsi: 'زن',
     tags: ['noun'],
     note: '"zan/bacha" is casual; "hamsar/farzand" is more formal.',
     usages: [
@@ -2428,6 +2607,7 @@ export const commonWords: SeedEntry[] = [
   {
     term: 'zart',
     meaning: '(slang) the sound of flatulence; "zart-o-port" = empty boastful talk',
+    farsi: 'زرت',
     tags: ['noun', 'slang', 'vulgar'],
     aliases: ['zert', 'zart o port'],
     note: 'Crude/childish. "zart-o-port nakon" = stop talking nonsense/boasting.',
@@ -2443,6 +2623,7 @@ export const commonWords: SeedEntry[] = [
   {
     term: 'zerzer',
     meaning: 'whining, nagging, blubbering; "zerzer nakon" = stop whining',
+    farsi: 'زرزر',
     tags: ['noun', 'slang'],
     aliases: ['zer zer', 'zerzeru'],
     usages: [
@@ -2457,6 +2638,7 @@ export const commonWords: SeedEntry[] = [
   {
     term: 'zesht',
     meaning: 'ugly; (also) inappropriate, unseemly',
+    farsi: 'زشت',
     tags: ['adjective'],
     usages: [
       { register: 'informal', finglish: 'in kar zeshte', english: 'This behavior is improper.' },
@@ -2470,6 +2652,7 @@ export const commonWords: SeedEntry[] = [
   {
     term: 'zībā',
     meaning: 'beautiful',
+    farsi: 'زیبا',
     tags: ['adjective'],
     aliases: ['zibaa'],
     usages: [
@@ -2482,6 +2665,1092 @@ export const commonWords: SeedEntry[] = [
         register: 'formal',
         finglish: 'che manzare-ye ziba-i ast',
         english: 'What a beautiful view.',
+      },
+    ],
+  },
+  {
+    term: 'mojarad',
+    meaning: 'single, unmarried',
+    farsi: 'مجرد',
+    tags: ['adjective'],
+    usages: [
+      {
+        register: 'informal',
+        finglish: 'hanuz mojaradam',
+        english: "I'm still single.",
+      },
+      {
+        register: 'formal',
+        finglish: 'man hanuz mojarad hastam',
+        english: 'I am still single.',
+      },
+    ],
+  },
+  {
+    term: 'mahjur',
+    meaning: 'abandoned, forsaken, neglected',
+    farsi: 'مهجور',
+    tags: ['adjective'],
+    note: "Literary 'forsaken/neglected'. The look-alike محجور (mahjur) means 'under legal guardianship'.",
+    usages: [
+      {
+        register: 'informal',
+        finglish: 'in rusta mahjur munde',
+        english: 'This village has been left forsaken.',
+      },
+      {
+        register: 'formal',
+        finglish: 'in rusta mahjur mande ast',
+        english: 'This village has remained forsaken.',
+      },
+    ],
+  },
+  {
+    term: 'khoruj',
+    meaning: 'exit, departure, leaving',
+    farsi: 'خروج',
+    tags: ['noun'],
+    usages: [
+      {
+        register: 'informal',
+        finglish: 'dar-e khoruj kojast?',
+        english: "Where's the exit?",
+      },
+      {
+        register: 'formal',
+        finglish: 'lotfan dar-e khoruj ra neshanam bedid',
+        english: 'Please show me the exit.',
+      },
+    ],
+  },
+  {
+    term: 'lotf',
+    meaning: 'kindness, grace, favor',
+    farsi: 'لطف',
+    tags: ['noun'],
+    usages: [
+      {
+        register: 'informal',
+        finglish: 'lotf kardi',
+        english: 'That was kind of you.',
+      },
+      {
+        register: 'formal',
+        finglish: 'az lotfetan mamnunam',
+        english: 'Thank you for your kindness.',
+      },
+    ],
+  },
+  {
+    term: 'marefat',
+    meaning: 'decency, good manners; knowledge, wisdom',
+    farsi: 'معرفت',
+    tags: ['noun'],
+    note: "Colloquially 'decency/loyalty' (ba marefat = decent, loyal); classically 'gnosis, knowledge'.",
+    usages: [
+      {
+        register: 'informal',
+        finglish: 'che adam-e ba marefati',
+        english: 'What a decent, loyal person.',
+      },
+      {
+        register: 'formal',
+        finglish: 'u ensan-e ba marefati ast',
+        english: 'He is a person of great decency.',
+      },
+    ],
+  },
+  {
+    term: 'vojud',
+    meaning: 'existence, being; presence',
+    farsi: 'وجود',
+    tags: ['noun'],
+    usages: [
+      {
+        register: 'informal',
+        finglish: "vojudet ne'mate",
+        english: 'Your presence is a blessing.',
+      },
+      {
+        register: 'formal',
+        finglish: "vojud-e shoma ne'mat ast",
+        english: 'Your presence is a blessing.',
+      },
+    ],
+  },
+  {
+    term: 'ayal',
+    meaning: 'wife; family, dependents',
+    farsi: 'عیال',
+    tags: ['noun'],
+    note: 'Older/colloquial word for one’s wife or household; can sound dated or playful.',
+    usages: [
+      {
+        register: 'informal',
+        finglish: 'ayalam khune-st',
+        english: 'My wife is at home.',
+      },
+      {
+        register: 'formal',
+        finglish: 'ayal-e bande manzel hastand',
+        english: 'My wife is at home.',
+      },
+    ],
+  },
+  {
+    term: 'moch',
+    meaning: 'wrist',
+    farsi: 'مچ',
+    tags: ['noun'],
+    note: "Also in 'moch gereftan' = to catch someone red-handed.",
+    usages: [
+      {
+        register: 'informal',
+        finglish: 'moch-e dastam dard mikone',
+        english: 'My wrist hurts.',
+      },
+      {
+        register: 'formal',
+        finglish: 'moch-e dast-e man dard mikonad',
+        english: 'My wrist hurts.',
+      },
+    ],
+  },
+  {
+    term: 'ganjur',
+    meaning: 'treasurer, keeper of a treasury',
+    farsi: 'گنجور',
+    tags: ['noun'],
+    note: 'Archaic/literary for a keeper of treasure.',
+    usages: [
+      {
+        register: 'informal',
+        finglish: 'ganjur-e shah bud',
+        english: "He was the king's treasurer.",
+      },
+      {
+        register: 'formal',
+        finglish: 'u ganjur-e darbar bud',
+        english: "He was the court's treasurer.",
+      },
+    ],
+  },
+  {
+    term: 'donbal',
+    meaning: 'after, behind; in pursuit of',
+    farsi: 'دنبال',
+    tags: ['noun'],
+    note: "Usually 'donbal-e' = after/looking for; 'donbal kardan' = to follow.",
+    usages: [
+      {
+        register: 'informal',
+        finglish: 'donbalam nayā',
+        english: "Don't follow me.",
+      },
+      {
+        register: 'formal',
+        finglish: 'lotfan donbal-e man nayayid',
+        english: 'Please do not follow me.',
+      },
+    ],
+  },
+  {
+    term: 'dar',
+    meaning: 'door',
+    farsi: 'در',
+    tags: ['noun'],
+    usages: [
+      {
+        register: 'informal',
+        finglish: 'dar-o beband',
+        english: 'Close the door.',
+      },
+      {
+        register: 'formal',
+        finglish: 'lotfan dar ra bebandid',
+        english: 'Please close the door.',
+      },
+    ],
+  },
+  {
+    term: 'divār',
+    meaning: 'wall',
+    farsi: 'دیوار',
+    tags: ['noun'],
+    usages: [
+      {
+        register: 'informal',
+        finglish: 'aks-o be divar bezan',
+        english: 'Hang the picture on the wall.',
+      },
+      {
+        register: 'formal',
+        finglish: 'aks ra be divar nasb konid',
+        english: 'Mount the picture on the wall.',
+      },
+    ],
+  },
+  {
+    term: 'panjere',
+    meaning: 'window',
+    farsi: 'پنجره',
+    tags: ['noun'],
+    usages: [
+      {
+        register: 'informal',
+        finglish: 'panjere-ro baz kon',
+        english: 'Open the window.',
+      },
+      {
+        register: 'formal',
+        finglish: 'lotfan panjere ra baz konid',
+        english: 'Please open the window.',
+      },
+    ],
+  },
+  {
+    term: 'miz',
+    meaning: 'table, desk',
+    farsi: 'میز',
+    tags: ['noun'],
+    usages: [
+      {
+        register: 'informal',
+        finglish: 'ghaza ru miz-e',
+        english: 'The food is on the table.',
+      },
+      {
+        register: 'formal',
+        finglish: 'ghaza ru-ye miz ast',
+        english: 'The food is on the table.',
+      },
+    ],
+  },
+  {
+    term: 'sandali',
+    meaning: 'chair',
+    farsi: 'صندلی',
+    tags: ['noun'],
+    usages: [
+      {
+        register: 'informal',
+        finglish: 'ru sandali beshin',
+        english: 'Sit on the chair.',
+      },
+      {
+        register: 'formal',
+        finglish: 'lotfan ru-ye sandali beneshinid',
+        english: 'Please sit on the chair.',
+      },
+    ],
+  },
+  {
+    term: 'otāgh',
+    meaning: 'room',
+    farsi: 'اتاق',
+    tags: ['noun'],
+    usages: [
+      {
+        register: 'informal',
+        finglish: 'otagham kuchik-e',
+        english: 'My room is small.',
+      },
+      {
+        register: 'formal',
+        finglish: 'otagh-e man kuchak ast',
+        english: 'My room is small.',
+      },
+    ],
+  },
+  {
+    term: 'dast',
+    meaning: 'hand',
+    farsi: 'دست',
+    tags: ['noun'],
+    usages: [
+      {
+        register: 'informal',
+        finglish: 'dastet-o bede',
+        english: 'Give me your hand.',
+      },
+      {
+        register: 'formal',
+        finglish: 'lotfan dast-e khod ra bedahid',
+        english: 'Please give me your hand.',
+      },
+    ],
+  },
+  {
+    term: 'pā',
+    meaning: 'foot, leg',
+    farsi: 'پا',
+    tags: ['noun'],
+    usages: [
+      {
+        register: 'informal',
+        finglish: 'pam dard mikone',
+        english: 'My foot hurts.',
+      },
+      {
+        register: 'formal',
+        finglish: 'pa-ye man dard mikonad',
+        english: 'My leg hurts.',
+      },
+    ],
+  },
+  {
+    term: 'sar',
+    meaning: 'head',
+    farsi: 'سر',
+    tags: ['noun'],
+    usages: [
+      {
+        register: 'informal',
+        finglish: 'saram dard mikone',
+        english: 'My head hurts.',
+      },
+      {
+        register: 'formal',
+        finglish: 'sar-e man dard mikonad',
+        english: 'My head hurts.',
+      },
+    ],
+  },
+  {
+    term: 'chashm',
+    meaning: 'eye',
+    farsi: 'چشم',
+    tags: ['noun'],
+    usages: [
+      {
+        register: 'informal',
+        finglish: 'cheshmat ghashang-e',
+        english: 'Your eyes are pretty.',
+      },
+      {
+        register: 'formal',
+        finglish: 'cheshman-e shoma ziba ast',
+        english: 'Your eyes are beautiful.',
+      },
+    ],
+  },
+  {
+    term: 'dahan',
+    meaning: 'mouth',
+    farsi: 'دهان',
+    tags: ['noun'],
+    usages: [
+      {
+        register: 'informal',
+        finglish: 'dahanet-o baz kon',
+        english: 'Open your mouth.',
+      },
+      {
+        register: 'formal',
+        finglish: 'lotfan dahan-e khod ra baz konid',
+        english: 'Please open your mouth.',
+      },
+    ],
+  },
+  {
+    term: 'del',
+    meaning: 'heart',
+    farsi: 'دل',
+    tags: ['noun'],
+    usages: [
+      {
+        register: 'informal',
+        finglish: 'del-e mehrabuni dari',
+        english: 'You have a kind heart.',
+      },
+      {
+        register: 'formal',
+        finglish: 'shoma del-e mehrabani darid',
+        english: 'You have a kind heart.',
+      },
+    ],
+  },
+  {
+    term: 'ātash',
+    meaning: 'fire',
+    farsi: 'آتش',
+    tags: ['noun'],
+    usages: [
+      {
+        register: 'informal',
+        finglish: 'atish roshan kon',
+        english: 'Light a fire.',
+      },
+      {
+        register: 'formal',
+        finglish: 'lotfan atash ra roshan konid',
+        english: 'Please light the fire.',
+      },
+    ],
+  },
+  {
+    term: 'bārān',
+    meaning: 'rain',
+    farsi: 'باران',
+    tags: ['noun'],
+    usages: [
+      {
+        register: 'informal',
+        finglish: 'baran miyad',
+        english: "It's raining.",
+      },
+      {
+        register: 'formal',
+        finglish: 'baran mibarad',
+        english: 'It is raining.',
+      },
+    ],
+  },
+  {
+    term: 'barf',
+    meaning: 'snow',
+    farsi: 'برف',
+    tags: ['noun'],
+    usages: [
+      {
+        register: 'informal',
+        finglish: 'barf umad',
+        english: 'It snowed.',
+      },
+      {
+        register: 'formal',
+        finglish: 'barf barid',
+        english: 'It snowed.',
+      },
+    ],
+  },
+  {
+    term: 'khorshīd',
+    meaning: 'sun',
+    farsi: 'خورشید',
+    tags: ['noun'],
+    usages: [
+      {
+        register: 'informal',
+        finglish: 'khorshid dar umad',
+        english: 'The sun came out.',
+      },
+      {
+        register: 'formal',
+        finglish: "khorshid tolu' kard",
+        english: 'The sun rose.',
+      },
+    ],
+  },
+  {
+    term: 'māh',
+    meaning: 'moon; month',
+    farsi: 'ماه',
+    tags: ['noun'],
+    usages: [
+      {
+        register: 'informal',
+        finglish: 'mah ghashang-e',
+        english: 'The moon is pretty.',
+      },
+      {
+        register: 'formal',
+        finglish: 'mah ziba ast',
+        english: 'The moon is beautiful.',
+      },
+    ],
+  },
+  {
+    term: 'setāre',
+    meaning: 'star',
+    farsi: 'ستاره',
+    tags: ['noun'],
+    usages: [
+      {
+        register: 'informal',
+        finglish: 'setareha ghashangan',
+        english: 'The stars are pretty.',
+      },
+      {
+        register: 'formal',
+        finglish: 'setaregan ziba hastand',
+        english: 'The stars are beautiful.',
+      },
+    ],
+  },
+  {
+    term: 'āsemān',
+    meaning: 'sky',
+    farsi: 'آسمان',
+    tags: ['noun'],
+    usages: [
+      {
+        register: 'informal',
+        finglish: 'aseman abri-ye',
+        english: 'The sky is cloudy.',
+      },
+      {
+        register: 'formal',
+        finglish: 'aseman abri ast',
+        english: 'The sky is cloudy.',
+      },
+    ],
+  },
+  {
+    term: 'daryā',
+    meaning: 'sea, ocean',
+    farsi: 'دریا',
+    tags: ['noun'],
+    usages: [
+      {
+        register: 'informal',
+        finglish: 'darya aroom-e',
+        english: 'The sea is calm.',
+      },
+      {
+        register: 'formal',
+        finglish: 'darya aram ast',
+        english: 'The sea is calm.',
+      },
+    ],
+  },
+  {
+    term: 'kūh',
+    meaning: 'mountain',
+    farsi: 'کوه',
+    tags: ['noun'],
+    usages: [
+      {
+        register: 'informal',
+        finglish: 'kuh boland-e',
+        english: 'The mountain is tall.',
+      },
+      {
+        register: 'formal',
+        finglish: 'kuh boland ast',
+        english: 'The mountain is high.',
+      },
+    ],
+  },
+  {
+    term: 'derakht',
+    meaning: 'tree',
+    farsi: 'درخت',
+    tags: ['noun'],
+    usages: [
+      {
+        register: 'informal',
+        finglish: 'in derakht bozorg-e',
+        english: 'This tree is big.',
+      },
+      {
+        register: 'formal',
+        finglish: 'in derakht bozorg ast',
+        english: 'This tree is large.',
+      },
+    ],
+  },
+  {
+    term: 'gol',
+    meaning: 'flower',
+    farsi: 'گل',
+    tags: ['noun'],
+    usages: [
+      {
+        register: 'informal',
+        finglish: 'in gol khoshbu-ye',
+        english: 'This flower smells nice.',
+      },
+      {
+        register: 'formal',
+        finglish: 'in gol khoshbu ast',
+        english: 'This flower is fragrant.',
+      },
+    ],
+  },
+  {
+    term: 'mīve',
+    meaning: 'fruit',
+    farsi: 'میوه',
+    tags: ['noun'],
+    usages: [
+      {
+        register: 'informal',
+        finglish: 'mive dust daram',
+        english: 'I like fruit.',
+      },
+      {
+        register: 'formal',
+        finglish: 'man mive dust daram',
+        english: 'I like fruit.',
+      },
+    ],
+  },
+  {
+    term: 'sīb',
+    meaning: 'apple',
+    farsi: 'سیب',
+    tags: ['noun'],
+    usages: [
+      {
+        register: 'informal',
+        finglish: 'ye sib bokhor',
+        english: 'Eat an apple.',
+      },
+      {
+        register: 'formal',
+        finglish: 'lotfan yek sib bokhorid',
+        english: 'Please eat an apple.',
+      },
+    ],
+  },
+  {
+    term: 'panīr',
+    meaning: 'cheese',
+    farsi: 'پنیر',
+    tags: ['noun'],
+    usages: [
+      {
+        register: 'informal',
+        finglish: 'nun-o panir mikhoram',
+        english: "I'm eating bread and cheese.",
+      },
+      {
+        register: 'formal',
+        finglish: 'nan va panir mikhoram',
+        english: 'I am eating bread and cheese.',
+      },
+    ],
+  },
+  {
+    term: 'namak',
+    meaning: 'salt',
+    farsi: 'نمک',
+    tags: ['noun'],
+    usages: [
+      {
+        register: 'informal',
+        finglish: 'namak-o bede',
+        english: 'Pass the salt.',
+      },
+      {
+        register: 'formal',
+        finglish: 'lotfan namak ra bedahid',
+        english: 'Please pass the salt.',
+      },
+    ],
+  },
+  {
+    term: 'shekar',
+    meaning: 'sugar',
+    farsi: 'شکر',
+    tags: ['noun'],
+    usages: [
+      {
+        register: 'informal',
+        finglish: 'be chai-t shekar bezan',
+        english: 'Put sugar in your tea.',
+      },
+      {
+        register: 'formal',
+        finglish: 'lotfan be chay shekar ezafe konid',
+        english: 'Please add sugar to the tea.',
+      },
+    ],
+  },
+  {
+    term: 'ghahve',
+    meaning: 'coffee',
+    farsi: 'قهوه',
+    tags: ['noun'],
+    usages: [
+      {
+        register: 'informal',
+        finglish: 'ghahve mikhori?',
+        english: 'Do you want coffee?',
+      },
+      {
+        register: 'formal',
+        finglish: 'ghahve mayel hastid?',
+        english: 'Would you like coffee?',
+      },
+    ],
+  },
+  {
+    term: 'shahr',
+    meaning: 'city, town',
+    farsi: 'شهر',
+    tags: ['noun'],
+    usages: [
+      {
+        register: 'informal',
+        finglish: 'shahr-e bozorgi-ye',
+        english: "It's a big city.",
+      },
+      {
+        register: 'formal',
+        finglish: 'shahr-e bozorgi ast',
+        english: 'It is a big city.',
+      },
+    ],
+  },
+  {
+    term: 'rāh',
+    meaning: 'road, way, path',
+    farsi: 'راه',
+    tags: ['noun'],
+    usages: [
+      {
+        register: 'informal',
+        finglish: 'rah-o gom kardam',
+        english: 'I lost my way.',
+      },
+      {
+        register: 'formal',
+        finglish: 'rah ra gom kardam',
+        english: 'I lost the way.',
+      },
+    ],
+  },
+  {
+    term: 'bāzār',
+    meaning: 'market, bazaar',
+    farsi: 'بازار',
+    tags: ['noun'],
+    usages: [
+      {
+        register: 'informal',
+        finglish: 'miram bazar',
+        english: "I'm going to the market.",
+      },
+      {
+        register: 'formal',
+        finglish: 'be bazar miravam',
+        english: 'I am going to the market.',
+      },
+    ],
+  },
+  {
+    term: 'maghāze',
+    meaning: 'shop, store',
+    farsi: 'مغازه',
+    tags: ['noun'],
+    usages: [
+      {
+        register: 'informal',
+        finglish: 'maghaze baste-st',
+        english: 'The shop is closed.',
+      },
+      {
+        register: 'formal',
+        finglish: 'maghaze baste ast',
+        english: 'The shop is closed.',
+      },
+    ],
+  },
+  {
+    term: 'madrese',
+    meaning: 'school',
+    farsi: 'مدرسه',
+    tags: ['noun'],
+    usages: [
+      {
+        register: 'informal',
+        finglish: 'madrese miram',
+        english: 'I go to school.',
+      },
+      {
+        register: 'formal',
+        finglish: 'be madrese miravam',
+        english: 'I go to school.',
+      },
+    ],
+  },
+  {
+    term: 'dāneshgāh',
+    meaning: 'university',
+    farsi: 'دانشگاه',
+    tags: ['noun'],
+    usages: [
+      {
+        register: 'informal',
+        finglish: 'daneshgah ghabul shodam',
+        english: 'I got into university.',
+      },
+      {
+        register: 'formal',
+        finglish: 'dar daneshgah paziresh shodam',
+        english: 'I was admitted to the university.',
+      },
+    ],
+  },
+  {
+    term: 'moallem',
+    meaning: 'teacher',
+    farsi: 'معلم',
+    tags: ['noun'],
+    usages: [
+      {
+        register: 'informal',
+        finglish: 'moallem-e khubi-ye',
+        english: "He's a good teacher.",
+      },
+      {
+        register: 'formal',
+        finglish: 'moallem-e khubi ast',
+        english: 'He is a good teacher.',
+      },
+    ],
+  },
+  {
+    term: 'ghatār',
+    meaning: 'train',
+    farsi: 'قطار',
+    tags: ['noun'],
+    usages: [
+      {
+        register: 'informal',
+        finglish: 'ghatar dir umad',
+        english: 'The train came late.',
+      },
+      {
+        register: 'formal',
+        finglish: "ghatar ba ta'khir amad",
+        english: 'The train arrived late.',
+      },
+    ],
+  },
+  {
+    term: 'otobūs',
+    meaning: 'bus',
+    farsi: 'اتوبوس',
+    tags: ['noun'],
+    usages: [
+      {
+        register: 'informal',
+        finglish: 'otobus-o az dast dadam',
+        english: 'I missed the bus.',
+      },
+      {
+        register: 'formal',
+        finglish: 'otobus ra az dast dadam',
+        english: 'I missed the bus.',
+      },
+    ],
+  },
+  {
+    term: 'hafte',
+    meaning: 'week',
+    farsi: 'هفته',
+    tags: ['noun'],
+    usages: [
+      {
+        register: 'informal',
+        finglish: 'hafte-ye dige miam',
+        english: "I'll come next week.",
+      },
+      {
+        register: 'formal',
+        finglish: 'hafte-ye ayande miayam',
+        english: 'I will come next week.',
+      },
+    ],
+  },
+  {
+    term: 'sāl',
+    meaning: 'year',
+    farsi: 'سال',
+    tags: ['noun'],
+    usages: [
+      {
+        register: 'informal',
+        finglish: 'chand sal dari?',
+        english: 'How old are you?',
+      },
+      {
+        register: 'formal',
+        finglish: 'shoma chand sal darid?',
+        english: 'How old are you?',
+      },
+    ],
+  },
+  {
+    term: 'zemestān',
+    meaning: 'winter',
+    farsi: 'زمستان',
+    tags: ['noun'],
+    usages: [
+      {
+        register: 'informal',
+        finglish: 'zemestun sard-e',
+        english: 'Winter is cold.',
+      },
+      {
+        register: 'formal',
+        finglish: 'zemestan sard ast',
+        english: 'Winter is cold.',
+      },
+    ],
+  },
+  {
+    term: 'tābestān',
+    meaning: 'summer',
+    farsi: 'تابستان',
+    tags: ['noun'],
+    usages: [
+      {
+        register: 'informal',
+        finglish: 'tabestun garm-e',
+        english: 'Summer is hot.',
+      },
+      {
+        register: 'formal',
+        finglish: 'tabestan garm ast',
+        english: 'Summer is hot.',
+      },
+    ],
+  },
+  {
+    term: 'bahār',
+    meaning: 'spring',
+    farsi: 'بهار',
+    tags: ['noun'],
+    usages: [
+      {
+        register: 'informal',
+        finglish: 'bahar umad',
+        english: 'Spring has come.',
+      },
+      {
+        register: 'formal',
+        finglish: 'bahar amad',
+        english: 'Spring has come.',
+      },
+    ],
+  },
+  {
+    term: 'garm',
+    meaning: 'warm, hot',
+    farsi: 'گرم',
+    tags: ['adjective'],
+    usages: [
+      {
+        register: 'informal',
+        finglish: 'hava garm-e',
+        english: 'The weather is hot.',
+      },
+      {
+        register: 'formal',
+        finglish: 'hava garm ast',
+        english: 'The weather is warm.',
+      },
+    ],
+  },
+  {
+    term: 'sard',
+    meaning: 'cold',
+    farsi: 'سرد',
+    tags: ['adjective'],
+    usages: [
+      {
+        register: 'informal',
+        finglish: 'ab sard-e',
+        english: 'The water is cold.',
+      },
+      {
+        register: 'formal',
+        finglish: 'ab sard ast',
+        english: 'The water is cold.',
+      },
+    ],
+  },
+  {
+    term: 'javān',
+    meaning: 'young',
+    farsi: 'جوان',
+    tags: ['adjective'],
+    usages: [
+      {
+        register: 'informal',
+        finglish: 'kheyli javuni',
+        english: "You're very young.",
+      },
+      {
+        register: 'formal',
+        finglish: 'shoma besyar javan hastid',
+        english: 'You are very young.',
+      },
+    ],
+  },
+  {
+    term: 'boland',
+    meaning: 'tall, high; loud',
+    farsi: 'بلند',
+    tags: ['adjective'],
+    usages: [
+      {
+        register: 'informal',
+        finglish: 'seda-t boland-e',
+        english: 'Your voice is loud.',
+      },
+      {
+        register: 'formal',
+        finglish: 'seda-ye shoma boland ast',
+        english: 'Your voice is loud.',
+      },
+    ],
+  },
+  {
+    term: 'tamiz',
+    meaning: 'clean, tidy',
+    farsi: 'تمیز',
+    tags: ['adjective'],
+    usages: [
+      {
+        register: 'informal',
+        finglish: 'otaghet tamiz-e',
+        english: 'Your room is clean.',
+      },
+      {
+        register: 'formal',
+        finglish: 'otagh-e shoma tamiz ast',
+        english: 'Your room is tidy.',
+      },
+    ],
+  },
+  {
+    term: 'nazdik',
+    meaning: 'near, close',
+    farsi: 'نزدیک',
+    tags: ['adjective'],
+    usages: [
+      {
+        register: 'informal',
+        finglish: 'khune-mun nazdik-e',
+        english: 'Our house is close.',
+      },
+      {
+        register: 'formal',
+        finglish: 'khane-ye ma nazdik ast',
+        english: 'Our house is near.',
+      },
+    ],
+  },
+  {
+    term: 'rāhat',
+    meaning: 'comfortable, easy, relaxed',
+    farsi: 'راحت',
+    tags: ['adjective'],
+    usages: [
+      {
+        register: 'informal',
+        finglish: 'rahat bash',
+        english: 'Make yourself comfortable.',
+      },
+      {
+        register: 'formal',
+        finglish: 'lotfan rahat bashid',
+        english: 'Please make yourself comfortable.',
       },
     ],
   },

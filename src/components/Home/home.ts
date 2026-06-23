@@ -1,6 +1,6 @@
 import { signal } from '@preact/signals-react';
 import { clearSearches } from '../../db/searches';
-import { recent, refreshRecent } from '../../state/recent';
+import { recent, refreshRecent, removeRecent } from '../../state/recent';
 import { common } from '../../state/common';
 import { openConfirm } from '../../state/ui';
 import { wordPath } from '../../utils/paths';
@@ -53,6 +53,7 @@ export const recentItems = (): WordListItem[] =>
       term: record.term,
       subtitle: record.resolved ? '' : 'no match',
       path: wordPath(record.query),
+      onRemove: () => void removeRecent(record.normalizedKey),
     }))
     .sort(byTerm);
 

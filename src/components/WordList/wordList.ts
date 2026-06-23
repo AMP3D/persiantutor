@@ -5,6 +5,7 @@ export interface WordListItem {
   term: string;
   subtitle: string;
   path: string;
+  onRemove?: () => void;
 }
 
 export const buildScrollClass = (mode: ScrollMode): string => {
