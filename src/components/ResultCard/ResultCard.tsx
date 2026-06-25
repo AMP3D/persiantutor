@@ -68,7 +68,8 @@ const ResultCard = () => {
       </div>
 
       <UsageGroup label="Informal" usages={view.informal} />
-      <UsageGroup label="Formal" usages={view.formal} />
+      <UsageGroup label="Spoken (mohaverei - colloquial)" usages={view.spoken} />
+      <UsageGroup label="Formal (ketabi - literary)" usages={view.formal} />
 
       {view.note && <p className="result-card__note">{view.note}</p>}
     </article>

@@ -10,6 +10,7 @@ export interface ResultView {
   meaning: string;
   note?: string;
   query: string;
+  spoken: Usage[];
   stage: LookupStage;
   tags: string[];
 }
@@ -20,6 +21,7 @@ export const buildResultView = (result: LookupResult): ResultView | null => {
 
   const formal = entry.usages.filter((usage) => usage.register === 'formal');
   const informal = entry.usages.filter((usage) => usage.register === 'informal');
+  const spoken = entry.usages.filter((usage) => usage.register === 'spoken');
 
   return {
     approximate: result.approximate,
@@ -30,6 +32,7 @@ export const buildResultView = (result: LookupResult): ResultView | null => {
     meaning: entry.meaning,
     note: entry.note,
     query: result.query,
+    spoken,
     stage: result.stage,
     tags: entry.tags,
   };

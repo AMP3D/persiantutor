@@ -43,8 +43,9 @@ const FlashCards = () => {
     return <p className="flash-cards__empty">Loading cards…</p>;
   }
 
-  const informal = card.usages.filter((usage) => usage.register === 'informal');
   const formal = card.usages.filter((usage) => usage.register === 'formal');
+  const informal = card.usages.filter((usage) => usage.register === 'informal');
+  const spoken = card.usages.filter((usage) => usage.register === 'spoken');
 
   return (
     <div className="flash-cards">
@@ -96,6 +97,16 @@ const FlashCards = () => {
               <div className="flash-cards__usage-group">
                 <span className="flash-cards__register">Informal</span>
                 {informal.map((usage) => (
+                  <p key={usage.finglish} className="flash-cards__usage">
+                    {usage.finglish} — {usage.english}
+                  </p>
+                ))}
+              </div>
+            )}
+            {spoken.length > 0 && (
+              <div className="flash-cards__usage-group">
+                <span className="flash-cards__register">Spoken</span>
+                {spoken.map((usage) => (
                   <p key={usage.finglish} className="flash-cards__usage">
                     {usage.finglish} — {usage.english}
                   </p>

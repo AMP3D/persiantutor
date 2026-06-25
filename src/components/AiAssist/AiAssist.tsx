@@ -61,8 +61,9 @@ const AiAssist = ({ word }: AiAssistProps) => {
     );
   }
 
-  const informal = entry.usages.filter((usage) => usage.register === 'informal');
   const formal = entry.usages.filter((usage) => usage.register === 'formal');
+  const informal = entry.usages.filter((usage) => usage.register === 'informal');
+  const spoken = entry.usages.filter((usage) => usage.register === 'spoken');
 
   return (
     <section className="ai-assist">
@@ -74,6 +75,7 @@ const AiAssist = ({ word }: AiAssistProps) => {
         <strong>{entry.term}</strong> — {entry.meaning}
       </p>
       <UsageLine label="Informal" usages={informal} />
+      <UsageLine label="Spoken" usages={spoken} />
       <UsageLine label="Formal" usages={formal} />
       {entry.note && <p className="ai-assist__note">{entry.note}</p>}
       <p className="ai-assist__disclaimer">

@@ -18,7 +18,7 @@ export type EntryTag =
   | 'verb'
   | 'vulgar';
 
-export type Register = 'formal' | 'informal';
+export type Register = 'formal' | 'informal' | 'spoken';
 
 export interface Usage {
   register: Register;
