@@ -1,6 +1,8 @@
 import type { DictionaryEntry } from './Entry';
 
-export type LookupStage = 'exact' | 'fuzzy' | 'llm' | 'none';
+export type SearchMode = 'finglish' | 'english';
+
+export type LookupStage = 'exact' | 'derived' | 'fuzzy' | 'llm' | 'none';
 
 export type LookupStatus = 'idle' | 'searching' | 'generating' | 'done';
 

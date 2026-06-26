@@ -47,7 +47,13 @@ const ResultCard = () => {
 
   return (
     <article className="result-card">
-      {view.approximate && <p className="result-card__approx">Closest match — did you mean:</p>}
+      {view.approximate && (
+        <p className="result-card__approx">
+          {view.stage === 'derived'
+            ? `Dictionary form of "${view.query}":`
+            : 'Closest match — did you mean:'}
+        </p>
+      )}
 
       <header className="result-card__head">
         <h3 className="result-card__term">{view.corrected}</h3>

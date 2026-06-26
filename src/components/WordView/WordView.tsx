@@ -1,4 +1,4 @@
-import { useParams } from 'react-router-dom';
+import { useParams, useSearchParams } from 'react-router-dom';
 import AiAssist from '../AiAssist/AiAssist.tsx';
 import ResultCard from '../ResultCard/ResultCard.tsx';
 import { useWordView } from './wordView';
@@ -6,7 +6,9 @@ import './wordView.scss';
 
 const WordView = () => {
   const { term } = useParams();
-  useWordView(term);
+  const [searchParams] = useSearchParams();
+  const mode = searchParams.get('lang') === 'en' ? 'english' : 'finglish';
+  useWordView(term, mode);
   const word = term ? decodeURIComponent(term) : '';
 
   return (

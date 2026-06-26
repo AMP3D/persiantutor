@@ -52,7 +52,7 @@ export const recentItems = (): WordListItem[] =>
       key: `r-${record.id}`,
       term: record.term,
       subtitle: record.resolved ? '' : 'no match',
-      path: wordPath(record.query),
+      path: wordPath(record.query, record.mode),
       onRemove: () => void removeRecent(record.normalizedKey),
     }))
     .sort(byTerm);

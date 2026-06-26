@@ -1,4 +1,5 @@
 import { commonWords } from '../data/commonWords';
+import { invalidateEnglishFuse } from '../engine/english';
 import { invalidateFuzzy } from '../engine/fuzzy';
 import { normalize, normalizeAll } from '../engine/normalize';
 import type { DictionaryEntry, SeedEntry } from '../models/Entry';
@@ -28,4 +29,5 @@ export const seedEntries = async (): Promise<void> => {
     await db.entries.bulkPut(rows);
   });
   invalidateFuzzy();
+  invalidateEnglishFuse();
 };

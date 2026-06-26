@@ -1,25 +1,31 @@
+import { invalidateEnglishFuse } from '../engine/english';
 import { invalidateFuzzy } from '../engine/fuzzy';
 import type { DictionaryEntry } from '../models/Entry';
 import { db } from './db';
+
+const invalidateIndexes = (): void => {
+  invalidateFuzzy();
+  invalidateEnglishFuse();
+};
 
 const SOURCE_RANK: Record<string, number> = { seed: 0, user: 1, llm: 2, dict: 3 };
 
 export const addEntry = async (entry: DictionaryEntry): Promise<number> => {
   const id = (await db.entries.add(entry)) as number;
-  invalidateFuzzy();
+  invalidateIndexes();
   return id;
 };
 
 export const addDictEntries = async (entries: DictionaryEntry[]): Promise<void> => {
   await db.entries.bulkAdd(entries);
-  invalidateFuzzy();
+  invalidateIndexes();
 };
 
 export const allEntries = (): Promise<DictionaryEntry[]> => db.entries.toArray();
 
 export const clearDictEntries = async (): Promise<void> => {
   await db.entries.where('source').equals('dict').delete();
-  invalidateFuzzy();
+  invalidateIndexes();
 };
 
 export const commonEntries = (): Promise<DictionaryEntry[]> =>

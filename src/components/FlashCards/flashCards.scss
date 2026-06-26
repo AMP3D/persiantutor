@@ -10,6 +10,37 @@
   transition: padding-bottom 0.2s ease;
 }
 
+.flash-cards__back {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-1);
+  color: var(--primary);
+  font-weight: 600;
+}
+
+.flash-cards__back .icon {
+  width: 1.1rem;
+  height: 1.1rem;
+}
+
+.flash-cards__bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-3);
+  width: 100%;
+  max-width: 24rem;
+}
+
+.flash-cards__bar-hint {
+  color: var(--muted);
+  font-weight: 600;
+}
+
+.flash-cards__bar-title {
+  font-weight: 700;
+}
+
 .flash-cards__card {
   display: flex;
   width: 100%;
@@ -37,6 +68,25 @@
   padding: var(--space-3);
 }
 
+.flash-cards__clear {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-1);
+  color: var(--muted);
+  font-size: 0.8rem;
+  font-weight: 600;
+}
+
+.flash-cards__clear .icon {
+  width: 1rem;
+  height: 1rem;
+}
+
+.flash-cards__clear:disabled {
+  cursor: default;
+  opacity: 0.4;
+}
+
 .flash-cards__controls {
   display: flex;
   align-items: center;
@@ -58,6 +108,31 @@
   color: var(--muted);
   font-size: 0.85rem;
   font-weight: 600;
+}
+
+.flash-cards__done {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-3);
+  text-align: center;
+}
+
+.flash-cards__done .icon {
+  width: 3rem;
+  height: 3rem;
+  color: var(--success);
+}
+
+.flash-cards__done-sub {
+  color: var(--muted);
+}
+
+.flash-cards__done-title {
+  font-size: 1.3rem;
+  font-weight: 700;
 }
 
 .flash-cards__empty {
@@ -123,6 +198,18 @@
   font-weight: 600;
 }
 
+.flash-cards__progress {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-3);
+  width: 100%;
+  max-width: 24rem;
+  color: var(--muted);
+  font-size: 0.85rem;
+  font-weight: 600;
+}
+
 .flash-cards__quiz {
   display: flex;
   gap: var(--space-2);
@@ -165,6 +252,108 @@
 .flash-cards__result--incorrect {
   background: color-mix(in srgb, var(--danger) 16%, transparent);
   color: var(--danger);
+}
+
+.flash-cards__select {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-1);
+  color: var(--muted);
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.flash-cards__select select {
+  padding: var(--space-2) var(--space-3);
+  background: var(--surface);
+  border: 0.0625rem solid var(--border);
+  border-radius: var(--radius-sm);
+  color: var(--text);
+  font-size: 0.95rem;
+  font-weight: 600;
+  letter-spacing: normal;
+  text-transform: none;
+  cursor: pointer;
+}
+
+.flash-cards__set {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-1);
+}
+
+.flash-cards__set-hint {
+  font-size: 0.65rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  opacity: 0.75;
+}
+
+.flash-cards__set-progress {
+  color: var(--muted);
+  font-size: 0.75rem;
+  font-weight: 600;
+}
+
+.flash-cards__set-square {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-1);
+  width: 100%;
+  aspect-ratio: 1;
+  padding: var(--space-1);
+  background: var(--surface);
+  border: 0.0625rem solid var(--border);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  color: var(--primary);
+  text-align: center;
+  transition:
+    border-color 0.15s ease,
+    transform 0.1s ease;
+}
+
+@media (hover: hover) {
+  .flash-cards__set-square:hover {
+    border-color: var(--primary);
+    transform: translateY(-0.125rem);
+  }
+}
+
+.flash-cards__set-square--done {
+  background: color-mix(in srgb, var(--success) 14%, var(--surface));
+  border-color: var(--success);
+  color: var(--success);
+}
+
+.flash-cards__set-title {
+  font-size: 0.95rem;
+  font-weight: 700;
+}
+
+.flash-cards__sets {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: var(--space-3);
+  width: 100%;
+}
+
+.flash-cards__setup {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  gap: var(--space-4);
+  width: 100%;
+  max-width: 30rem;
+  min-height: 0;
+  overflow-y: auto;
+  padding: var(--space-1) var(--space-1) var(--space-4);
 }
 
 .flash-cards__term {

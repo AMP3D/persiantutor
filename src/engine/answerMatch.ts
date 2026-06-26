@@ -153,16 +153,19 @@ const tokensMatch = (guess: string[], candidate: string[]): boolean => {
   return true;
 };
 
+// Split on punctuation that separates distinct glosses: commas, semicolons, slashes, "or", and dashes
+// (em/en or a spaced hyphen) — the dash often introduces an explanatory clause, e.g. "snake venom —
+// an interjection…", so the lead gloss "snake venom" should stand on its own.
 const splitParts = (value: string): string[] =>
   value
-    .split(/[,;/]|\bor\b/i)
+    .split(/[,;/—–]|\s-\s|\bor\b/i)
     .map((part) => part.trim())
     .filter(Boolean);
 
 /**
- * A meaning string yields several acceptable answers: the whole thing, each comma/slash-separated
- * synonym, and the same again with parentheticals dropped — so "rice (uncooked)" accepts both the
- * full phrase and a bare "rice".
+ * A meaning string yields several acceptable answers: the whole thing, each separated synonym, and the
+ * same again with parentheticals dropped — so "rice (uncooked)" accepts both the full phrase and a
+ * bare "rice".
  */
 const expand = (value: string): string[] => {
   const variants = [value, value.replace(/\([^)]*\)/g, ' ')];

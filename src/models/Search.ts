@@ -1,3 +1,5 @@
+import type { SearchMode } from './Lookup';
+
 export interface SearchRecord {
   id?: number;
   query: string;
@@ -5,5 +7,6 @@ export interface SearchRecord {
   term: string;
   entryId?: number;
   resolved: boolean;
+  mode?: SearchMode;
   at: number;
 }

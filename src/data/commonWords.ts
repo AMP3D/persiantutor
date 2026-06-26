@@ -20,7 +20,11 @@ export const commonWords: SeedEntry[] = [
     aliases: ['adat bokon', 'aadat kon'],
     usages: [
       { register: 'informal', finglish: 'behesh aadat bokon', english: 'Get used to it.' },
-      { register: 'spoken', finglish: 'lotfan behesh aadat konin', english: 'Please get used to it.' },
+      {
+        register: 'spoken',
+        finglish: 'lotfan behesh aadat konin',
+        english: 'Please get used to it.',
+      },
       {
         register: 'formal',
         finglish: 'lotfan behesh aadat konid',
@@ -670,7 +674,11 @@ export const commonWords: SeedEntry[] = [
     note: '"chert nago" = stop talking nonsense. With the other vowel, "chort zadan" means to doze off.',
     usages: [
       { register: 'informal', finglish: 'chert nago', english: "Don't talk nonsense." },
-      { register: 'spoken', finglish: 'lotfan chert nagoin', english: "Please don't talk nonsense." },
+      {
+        register: 'spoken',
+        finglish: 'lotfan chert nagoin',
+        english: "Please don't talk nonsense.",
+      },
       {
         register: 'formal',
         finglish: 'lotfan sokhan-e bipaye nagooid',
@@ -4089,7 +4097,11 @@ export const commonWords: SeedEntry[] = [
       { register: 'informal', finglish: 'rahatam', english: 'I am comfortable.' },
       { register: 'informal', finglish: 'rahat bash', english: 'Make yourself comfortable.' },
       { register: 'informal', finglish: 'un rahat-e', english: 'He/she is comfortable.' },
-      { register: 'spoken', finglish: 'lotfan rahat bashin', english: 'Please make yourself comfortable.' },
+      {
+        register: 'spoken',
+        finglish: 'lotfan rahat bashin',
+        english: 'Please make yourself comfortable.',
+      },
       {
         register: 'formal',
         finglish: 'lotfan rahat bashid',
@@ -4242,6 +4254,89 @@ export const commonWords: SeedEntry[] = [
         register: 'formal',
         finglish: 'lotfan biyaeed be park beravim',
         english: "Let's go to the park.",
+      },
+    ],
+  },
+  {
+    term: 'intori',
+    meaning: 'like this, this way',
+    farsi: 'این‌طوری',
+    tags: ['adverb'],
+    aliases: ['intory', 'in tori', 'in tory'],
+    usages: [
+      {
+        register: 'informal',
+        finglish: 'intori begu',
+        farsi: 'این‌طوری بگو',
+        english: 'Say it like this.',
+      },
+      {
+        register: 'spoken',
+        finglish: 'intori begin',
+        farsi: 'این‌طوری بگین',
+        english: 'Say it like this.',
+      },
+      {
+        register: 'formal',
+        finglish: 'be in surat befarmaeed',
+        farsi: 'به این صورت بفرمایید',
+        english: 'Please say it this way.',
+      },
+    ],
+  },
+  {
+    term: 'hamintori',
+    meaning: 'just like this; for no particular reason; so-so',
+    farsi: 'همین‌طوری',
+    tags: ['adverb'],
+    aliases: ['haminjuri', 'hamin tori', 'hamin juri', 'haminjoori'],
+    note: 'In reply to "chetori?" (how are you?), "hamintori" means "so-so / nothing special."',
+    usages: [
+      {
+        register: 'informal',
+        finglish: 'hamintori porsidam',
+        farsi: 'همین‌طوری پرسیدم',
+        english: 'I just asked, no particular reason.',
+      },
+      {
+        register: 'spoken',
+        finglish: 'hamintori goftam',
+        farsi: 'همین‌طوری گفتم',
+        english: 'I just said it, no particular reason.',
+      },
+      {
+        register: 'formal',
+        finglish: 'bedune dalile khassi arz kardam',
+        farsi: 'بدون دلیل خاصی عرض کردم',
+        english: 'I mentioned it without any particular reason.',
+      },
+    ],
+  },
+  {
+    term: 'chetori',
+    meaning: 'how; how are you? (informal)',
+    farsi: 'چطوری',
+    tags: ['adverb', 'greeting'],
+    aliases: ['chetor', 'che tori', 'chejuri', 'chejoori', 'che juri'],
+    note: 'Literally "how," but on its own "chetori?" is the everyday informal "how are you?"',
+    usages: [
+      {
+        register: 'informal',
+        finglish: 'chetori?',
+        farsi: 'چطوری؟',
+        english: 'How are you?',
+      },
+      {
+        register: 'spoken',
+        finglish: 'shoma chetorin?',
+        farsi: 'شما چطورین؟',
+        english: 'How are you?',
+      },
+      {
+        register: 'formal',
+        finglish: 'hāletān chetor ast?',
+        farsi: 'حالتان چطور است؟',
+        english: 'How are you?',
       },
     ],
   },
