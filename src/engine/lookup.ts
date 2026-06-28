@@ -1,9 +1,12 @@
 import { allEntries, findByKey } from '../db/entries';
 import { deriveLemma } from './derive';
-import { englishFuzzyMatch, findByMeaning, normalizeEnglish } from './english';
+import { englishFuzzyMatch, findAllByMeaning, normalizeEnglish } from './english';
 import type { LookupResult, SearchMode } from '../models/Lookup';
 import { fuzzyMatch, getFuse } from './fuzzy';
 import { normalize } from './normalize';
+
+// How many additional Persian words to offer for a one-to-many English query.
+const ALTERNATE_LIMIT = 12;
 
 /**
  * Deterministic, fully offline lookup pipeline: normalize -> exact (indexed)
@@ -58,14 +61,18 @@ const lookupEnglish = async (query: string): Promise<LookupResult> => {
 
   const entries = await allEntries();
 
-  const exact = findByMeaning(entries, key);
-  if (exact) {
+  // English is one-to-many; gather all matches ranked most-common-spoken first,
+  // then present the best as the primary result and the rest as alternates.
+  const matches = findAllByMeaning(entries, key, ALTERNATE_LIMIT + 1);
+  if (matches.length > 0) {
+    const [primary, ...rest] = matches;
     return {
       ...base,
-      normalizedKey: exact.normalizedKey,
-      entry: exact,
+      normalizedKey: primary.normalizedKey,
+      entry: primary,
       stage: 'exact',
       approximate: false,
+      alternates: rest,
     };
   }
 

@@ -1,6 +1,8 @@
+import { Link } from 'react-router-dom';
 import type { Usage } from '../../models/Entry';
 import { result, status } from '../../state/search';
 import CopyButton from '../CopyButton/CopyButton.tsx';
+import Icon from '../Icon/Icon.tsx';
 import { buildResultView } from './resultCard';
 import './resultCard.scss';
 
@@ -78,6 +80,23 @@ const ResultCard = () => {
       <UsageGroup label="Formal (ketabi - literary)" usages={view.formal} />
 
       {view.note && <p className="result-card__note">{view.note}</p>}
+
+      {view.alternates.length > 0 && (
+        <div className="result-card__alts">
+          <h4 className="result-card__alts-label">Other words for "{view.query}"</h4>
+          <ul className="result-card__alts-list">
+            {view.alternates.map((alt) => (
+              <li key={alt.term}>
+                <Link className="result-card__alt" to={alt.path}>
+                  <span className="result-card__alt-term">{alt.term}</span>
+                  <span className="result-card__alt-meaning">{alt.meaning}</span>
+                  <Icon name="chevron-right" />
+                </Link>
+              </li>
+            ))}
+          </ul>
+        </div>
+      )}
     </article>
   );
 };

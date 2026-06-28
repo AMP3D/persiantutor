@@ -229,6 +229,30 @@
   text-transform: uppercase;
 }
 
+.flash-cards__reset-all {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-1);
+  flex-shrink: 0;
+  padding: var(--space-2) var(--space-3);
+  border: 0.0625rem solid var(--border);
+  border-radius: var(--radius-sm);
+  color: var(--danger);
+  font-size: 0.85rem;
+  font-weight: 600;
+}
+
+.flash-cards__reset-all .icon {
+  width: 1rem;
+  height: 1rem;
+}
+
+.flash-cards__reset-all:disabled {
+  cursor: default;
+  color: var(--muted);
+  opacity: 0.5;
+}
+
 .flash-cards__result {
   display: flex;
   align-items: center;
@@ -354,6 +378,13 @@
   min-height: 0;
   overflow-y: auto;
   padding: var(--space-1) var(--space-1) var(--space-4);
+}
+
+.flash-cards__setup-bar {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: var(--space-3);
 }
 
 .flash-cards__term {

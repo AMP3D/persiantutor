@@ -47,6 +47,7 @@ Open `http://localhost:5173/persiantutor/` in Chrome. Use DevTools device mode f
 | `npm run dev`     | Start dev server                           |
 | `npm run build`   | Type-check and production build            |
 | `npm run preview` | Preview production build                   |
+| `npm test`        | Run the lookup regression suite (Vitest)   |
 | `npm run format`  | Format code with Prettier                  |
 | `npm run lint`    | Lint with ESLint                           |
 | `npm run deploy`  | Build and publish to the `gh-pages` branch |
@@ -56,6 +57,18 @@ Open `http://localhost:5173/persiantutor/` in Chrome. Use DevTools device mode f
 Use the ⋮ menu in the header to **Export DB** (download a JSON backup of all entries and history),
 **Import DB** (restore from a backup), or **Clear DB** (reset to the starter words). Import and Clear
 ask you to confirm and remind you to export first.
+
+## Data sources & attribution
+
+- **Dictionary** — built from [Wiktionary](https://www.wiktionary.org/) via the
+  [kaikki.org](https://kaikki.org/) machine-readable extract (CC BY-SA). See `scripts/build-dictionary.mjs`.
+- **Word-frequency list** (used to rank the most common spoken translation first) — derived from the
+  [OpenSubtitles](http://www.opensubtitles.org) corpus via [hermitdave/FrequencyWords](https://github.com/hermitdave/FrequencyWords)
+  (MIT). See `scripts/build-frequency.mjs`.
+- **Colloquial-sense overlay** (`public/senses.json`, used as hidden English match keywords so e.g.
+  "motorcycle" finds موتور) — mined from the OPUS [OpenSubtitles](http://www.opensubtitles.org)
+  Persian–English parallel corpus ([OPUS](https://opus.nlpl.eu/), Lison & Tiedemann, LREC 2016) by
+  `scripts/align-corpus.mjs`. Fully offline.
 
 ## Install as PWA (Android)
 

@@ -17,6 +17,7 @@ import { isAnswerCorrect } from '../../engine/answerMatch';
 import type { DictionaryEntry } from '../../models/Entry';
 import { common } from '../../state/common';
 import { recent } from '../../state/recent';
+import { openConfirm } from '../../state/ui';
 
 export type { GroupSize } from '../../db/flashcards';
 
@@ -238,12 +239,19 @@ export const handleSizeChange = (event: ChangeEvent<HTMLSelectElement>): void =>
 export const handleSubmit = (event: FormEvent): void => {
   event.preventDefault();
   if (flipped.value) {
-    next();
+    // Advancing past the last card of a set returns to the grid so a new set can be picked. A wrong
+    // answer re-queues a copy (growing the deck), so we only leave once nothing remains ahead.
+    if (index.value >= deck.value.length - 1) closeSet();
+    else next();
     return;
   }
   grade();
   flipped.value = true;
 };
+
+/** Whether any set has learned progress — gates the "reset all" control. */
+export const hasProgress = (): boolean =>
+  Object.values(progress.value).some((keys) => keys.length > 0);
 
 export const next = (): void => {
   if (index.value < deck.value.length - 1) {
@@ -259,6 +267,20 @@ export const prev = (): void => {
     index.value -= 1;
     reset();
   }
+};
+
+export const resetAllSets = (): void => {
+  openConfirm({
+    title: 'Reset all sets?',
+    message:
+      'This clears your learned progress for every set so you can start over. The word lists and your most-missed history stay.',
+    confirmLabel: 'Reset all',
+    onConfirm: async () => {
+      progress.value = {};
+      await saveProgress({});
+      buildDeck();
+    },
+  });
 };
 
 export const reshuffle = async (): Promise<void> => {

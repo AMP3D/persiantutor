@@ -14,10 +14,12 @@ import {
   handleInput,
   handleSizeChange,
   handleSubmit,
+  hasProgress,
   index,
   next,
   openSet,
   prev,
+  resetAllSets,
   reshuffle,
   result,
   reveal,
@@ -60,16 +62,27 @@ const FlashCards = () => {
     return (
       <div className="flash-cards">
         <div className="flash-cards__setup">
-          <label className="flash-cards__select">
-            <span>Words per group</span>
-            <select onChange={handleSizeChange} value={String(size)}>
-              {groupSizeOptions.map((option) => (
-                <option key={String(option)} value={String(option)}>
-                  {option === 'all' ? 'All' : option}
-                </option>
-              ))}
-            </select>
-          </label>
+          <div className="flash-cards__setup-bar">
+            <label className="flash-cards__select">
+              <span>Words per group</span>
+              <select onChange={handleSizeChange} value={String(size)}>
+                {groupSizeOptions.map((option) => (
+                  <option key={String(option)} value={String(option)}>
+                    {option === 'all' ? 'All' : option}
+                  </option>
+                ))}
+              </select>
+            </label>
+            <button
+              className="flash-cards__reset-all"
+              disabled={!hasProgress()}
+              onClick={resetAllSets}
+              type="button"
+            >
+              <Icon name="trash" />
+              Reset all
+            </button>
+          </div>
 
           <div className="flash-cards__sets">
             {tiles.map((tile) => (

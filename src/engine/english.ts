@@ -1,6 +1,8 @@
 import Fuse, { type IFuseOptions } from 'fuse.js';
 import type { DictionaryEntry } from '../models/Entry';
 import { editDistance } from './fuzzy';
+import { freqRank } from './frequency';
+import { extraSenses } from './senses';
 
 const SOURCE_RANK: Record<string, number> = { seed: 0, user: 1, llm: 2, dict: 3 };
 
@@ -21,16 +23,88 @@ export const normalizeEnglish = (input: string): string =>
 const glossesOf = (meaning: string): string[] =>
   meaning.split(/[;,]/).map(normalizeEnglish).filter(Boolean);
 
-// Lower is better: prefer the curated source, then the earlier (more prominent)
-// sense within the entry, then the more precise (shorter) overall meaning.
-const scoreOf = (entry: DictionaryEntry, glossIndex: number): number =>
-  (SOURCE_RANK[entry.source] ?? 9) * 1e6 + glossIndex * 1e3 + Math.min(entry.meaning.length, 999);
+const escapeRegExp = (value: string): string => value.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
 
-interface EnglishIndex {
-  exact: Map<string, DictionaryEntry>;
-  fuse: Fuse<DictionaryEntry>;
-  size: number;
+const cmp = (a: number, b: number): number => (a < b ? -1 : a > b ? 1 : 0);
+
+// Match tiers (lower = better). Real-gloss matches always outrank hidden
+// corpus-mined senses, so a spurious sense (قهوه "coffee" co-occurring with
+// "cup") can never beat a real translation no matter how frequent the word is.
+const GLOSS_EXACT = 0;
+const GLOSS_CONTAINS = 1;
+const SENSE_EXACT = 2;
+const SENSE_CONTAINS = 3;
+
+interface Match {
+  entry: DictionaryEntry;
+  matchType: number;
+  glossIndex: number;
 }
+
+const matchInfo = (entry: DictionaryEntry, key: string, wordRe: RegExp): Match | null => {
+  let matchType = Infinity;
+  let glossIndex = 0;
+  glossesOf(entry.meaning).forEach((gloss, index) => {
+    const type = gloss === key ? GLOSS_EXACT : wordRe.test(gloss) ? GLOSS_CONTAINS : Infinity;
+    if (type < matchType) {
+      matchType = type;
+      glossIndex = index;
+    }
+  });
+  // Only fall back to hidden corpus-mined senses (never displayed) when the
+  // gloss itself doesn't match — they fill in colloquial meanings for recall but
+  // sit in a strictly lower tier than any real-gloss match.
+  if (matchType > GLOSS_CONTAINS) {
+    extraSenses(entry.farsi).forEach((sense, index) => {
+      const type = sense === key ? SENSE_EXACT : wordRe.test(sense) ? SENSE_CONTAINS : Infinity;
+      if (type < matchType) {
+        matchType = type;
+        glossIndex = index;
+      }
+    });
+  }
+  return matchType === Infinity ? null : { entry, matchType, glossIndex };
+};
+
+// When the same word has several entries (curated seed vs raw dictionary), keep
+// the most authoritative / precise one. Lower is better.
+const dedupeScore = (m: Match): number =>
+  (SOURCE_RANK[m.entry.source] ?? 9) * 100 + m.matchType * 10 + m.glossIndex;
+
+/**
+ * English is one-to-many (many Persian words mean "cup"), so return every entry
+ * whose meaning carries the query — as a standalone gloss ("cup") or a whole
+ * word inside one ("a glass cup") — deduped by word. A standalone gloss is a
+ * truer translation than an incidental mention, so exact-before-contained is the
+ * primary order; within each tier the **most common spoken** word (frequency
+ * list) comes first, so "cup" -> livân. This also stops a frequent homograph's
+ * stray sense (ماه "moon" listing "beautiful person") from hijacking the top.
+ */
+export const findAllByMeaning = (
+  entries: DictionaryEntry[],
+  key: string,
+  limit: number,
+): DictionaryEntry[] => {
+  const wordRe = new RegExp(`\\b${escapeRegExp(key)}\\b`);
+  const best = new Map<string, Match>();
+  for (const entry of entries) {
+    const match = matchInfo(entry, key, wordRe);
+    if (!match) continue;
+    const prev = best.get(entry.normalizedKey);
+    if (!prev || dedupeScore(match) < dedupeScore(prev)) best.set(entry.normalizedKey, match);
+  }
+  return [...best.values()]
+    .sort(
+      (a, b) =>
+        cmp(a.matchType, b.matchType) ||
+        cmp(freqRank(a.entry.farsi), freqRank(b.entry.farsi)) ||
+        cmp(SOURCE_RANK[a.entry.source] ?? 9, SOURCE_RANK[b.entry.source] ?? 9) ||
+        cmp(a.glossIndex, b.glossIndex) ||
+        cmp(Math.min(a.entry.meaning.length, 999), Math.min(b.entry.meaning.length, 999)),
+    )
+    .slice(0, limit)
+    .map((match) => match.entry);
+};
 
 const fuseOptions: IFuseOptions<DictionaryEntry> = {
   ignoreLocation: true,
@@ -41,41 +115,20 @@ const fuseOptions: IFuseOptions<DictionaryEntry> = {
   ],
 };
 
-// English-mode lookup needs its own index over English fields. Like the Finglish
-// Fuse it is expensive to build over ~15k entries, so memoize and rebuild only
-// when the entry set changes.
-let cache: EnglishIndex | null = null;
+// The English Fuse (typo fallback) is expensive to build over ~15k entries, so
+// memoize it and rebuild only when the entry set changes.
+let cache: { fuse: Fuse<DictionaryEntry>; size: number } | null = null;
 
 export const invalidateEnglishFuse = (): void => {
   cache = null;
 };
 
-const buildIndex = (entries: DictionaryEntry[]): EnglishIndex => {
-  // Reverse gloss -> entry map: for each individual English sense keep the
-  // best-scoring entry, so "jam" resolves to morabbâ rather than a buried sense.
-  const exact = new Map<string, DictionaryEntry>();
-  const bestScore = new Map<string, number>();
-  for (const entry of entries) {
-    glossesOf(entry.meaning).forEach((gloss, index) => {
-      const score = scoreOf(entry, index);
-      if (score < (bestScore.get(gloss) ?? Infinity)) {
-        bestScore.set(gloss, score);
-        exact.set(gloss, entry);
-      }
-    });
+const getFuse = (entries: DictionaryEntry[]): Fuse<DictionaryEntry> => {
+  if (!cache || cache.size !== entries.length) {
+    cache = { fuse: new Fuse(entries, fuseOptions), size: entries.length };
   }
-  return { exact, fuse: new Fuse(entries, fuseOptions), size: entries.length };
+  return cache.fuse;
 };
-
-const getIndex = (entries: DictionaryEntry[]): EnglishIndex => {
-  if (!cache || cache.size !== entries.length) cache = buildIndex(entries);
-  return cache;
-};
-
-export const findByMeaning = (
-  entries: DictionaryEntry[],
-  key: string,
-): DictionaryEntry | undefined => getIndex(entries).exact.get(key);
 
 const tolerance = (length: number): number => (length <= 4 ? 1 : length <= 7 ? 2 : 3);
 
@@ -92,7 +145,7 @@ export const englishFuzzyMatch = (
   entries: DictionaryEntry[],
   key: string,
 ): DictionaryEntry | null => {
-  for (const { item } of getIndex(entries).fuse.search(key, { limit: 8 })) {
+  for (const { item } of getFuse(entries).search(key, { limit: 8 })) {
     if (closeEnough(key, item)) return item;
   }
   return null;

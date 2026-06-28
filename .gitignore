@@ -28,3 +28,8 @@ CLAUDE.md
 .claude
 # Dictionary build source (downloaded, not committed)
 _kaikki.jsonl
+# Frequency-list build source (downloaded, not committed)
+_fa_freq.txt
+# Corpus-alignment source (downloaded, not committed; public/senses.json is the committed output)
+_os/
+_os.zip

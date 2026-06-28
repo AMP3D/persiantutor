@@ -5,8 +5,9 @@ import { normalize } from '../engine/normalize';
 import type { DictionaryEntry, EntryTag } from '../models/Entry';
 import { SettingKeys } from '../models/Settings';
 
-// Bump when public/dictionary.json changes to force a one-time reload.
-const DICT_VERSION = 2;
+// Bump when public/dictionary.json OR the normalize() keying changes, to force a
+// one-time reload (v3: ġ→gh re-keying so ق-words match exactly).
+const DICT_VERSION = 3;
 const CHUNK = 2000;
 
 // Compact tuple shape from public/dictionary.json: [term, farsi, meaning, pos, aliasKeys?].

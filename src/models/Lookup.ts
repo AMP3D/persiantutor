@@ -12,4 +12,7 @@ export interface LookupResult {
   entry: DictionaryEntry | null;
   stage: LookupStage;
   approximate: boolean;
+  // English mode only: other entries that also match the typed English word
+  // (e.g. "cup" -> livân, fenjân, jâm, …), excluding `entry`.
+  alternates?: DictionaryEntry[];
 }

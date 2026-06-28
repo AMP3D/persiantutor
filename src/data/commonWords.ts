@@ -859,24 +859,6 @@ export const commonWords: SeedEntry[] = [
     ],
   },
   {
-    term: 'edārī',
-    meaning: 'administrative; office-related',
-    farsi: 'اداری',
-    tags: ['adjective'],
-    usages: [
-      {
-        register: 'spoken',
-        finglish: 'ye kar-e edari daram',
-        english: 'I have some office work.',
-      },
-      {
-        register: 'formal',
-        finglish: 'yek kar-e edari daram',
-        english: 'I have some office work.',
-      },
-    ],
-  },
-  {
     term: 'ehtiyāj',
     meaning: 'need; "ehtiaj daram" = I need',
     farsi: 'احتیاج',
@@ -2883,7 +2865,7 @@ export const commonWords: SeedEntry[] = [
   },
   {
     term: 'zart',
-    meaning: '(slang) the sound of flatulence; "zart-o-port" = empty boastful talk',
+    meaning: 'slang; (slang) the sound of flatulence; "zart-o-port" = empty boastful talk',
     farsi: 'زرت',
     tags: ['noun', 'slang', 'vulgar'],
     aliases: ['zert', 'zart o port'],
@@ -4337,6 +4319,62 @@ export const commonWords: SeedEntry[] = [
         finglish: 'hāletān chetor ast?',
         farsi: 'حالتان چطور است؟',
         english: 'How are you?',
+      },
+    ],
+  },
+  {
+    term: 'livân',
+    meaning: 'glass, cup, mug',
+    farsi: 'لیوان',
+    tags: ['noun'],
+    aliases: ['livan', 'liwan'],
+    note: 'The everyday word for a drinking glass, cup, or mug. A small teacup is a "fenjân".',
+    usages: [
+      {
+        register: 'informal',
+        finglish: 'ye livân âb bede',
+        farsi: 'یه لیوان آب بده',
+        english: 'Give me a glass of water.',
+      },
+      {
+        register: 'spoken',
+        finglish: 'livânetun ro por konin',
+        farsi: 'لیوانتون رو پر کنین',
+        english: 'Fill up your glass.',
+      },
+      {
+        register: 'formal',
+        finglish: 'lotfan livân ra por konid',
+        farsi: 'لطفاً لیوان را پر کنید',
+        english: 'Please fill the glass.',
+      },
+    ],
+  },
+  {
+    term: 'motor',
+    meaning: 'motorbike, motorcycle; engine, motor',
+    farsi: 'موتور',
+    tags: ['noun'],
+    aliases: ['motur', 'mutor'],
+    note: 'In everyday speech "motor" (موتور) usually means a motorcycle; it also means an engine/motor. The full word is "motorsiklet".',
+    usages: [
+      {
+        register: 'informal',
+        finglish: 'savâr-e motor shodam',
+        farsi: 'سوار موتور شدم',
+        english: 'I got on the motorcycle.',
+      },
+      {
+        register: 'spoken',
+        finglish: 'bâ motor miyâyn?',
+        farsi: 'با موتور میاین؟',
+        english: 'Are you coming by motorcycle?',
+      },
+      {
+        register: 'formal',
+        finglish: 'bâ motorsiklet miravam',
+        farsi: 'با موتورسیکلت می‌روم',
+        english: 'I will go by motorcycle.',
       },
     ],
   },

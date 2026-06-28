@@ -41,6 +41,7 @@ const toFinglish = (r) =>
     .replace(/[čČ]/g, 'ch')
     .replace(/[žŽ]/g, 'zh')
     .replace(/[ǰ]/g, 'j')
+    .replace(/[ġĠ]/g, 'gh')
     .replace(/[qQ]/g, 'gh')
     .replace(/[ʾʿ‘’'`]/g, '')
     .replace(/\s+/g, ' ')
