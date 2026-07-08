@@ -2,6 +2,7 @@ import { Route, Routes } from 'react-router-dom';
 import AiModal from '../AiModal/AiModal.tsx';
 import Alphabet from '../Alphabet/Alphabet.tsx';
 import ConfirmModal from '../ConfirmModal/ConfirmModal.tsx';
+import DaysMonths from '../DaysMonths/DaysMonths.tsx';
 import DictLoadingModal from '../DictLoadingModal/DictLoadingModal.tsx';
 import FlashCards from '../FlashCards/FlashCards.tsx';
 import Home from '../Home/Home.tsx';
@@ -40,6 +41,7 @@ const App = () => (
         <Route path="/flash-cards" element={<FlashCards />} />
         <Route path="/alphabet" element={<Alphabet />} />
         <Route path="/numbers" element={<Numbers />} />
+        <Route path="/days-months" element={<DaysMonths />} />
       </Routes>
     </main>
     <ConfirmModal />

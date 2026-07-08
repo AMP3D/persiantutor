@@ -1,6 +1,8 @@
 import { signal } from '@preact/signals-react';
 import type { ChangeEvent, FormEvent, MouseEvent } from 'react';
+import { calendarEntries } from '../../data/calendar';
 import { frequencyRank } from '../../data/frequency';
+import { numberEntries } from '../../data/numbers';
 import { entriesByIds } from '../../db/entries';
 import {
   type GroupProgress,
@@ -96,7 +98,12 @@ const missedCards = (lookup: Map<string, DictionaryEntry>): DictionaryEntry[] =>
 const buildGroups = (): void => {
   const commonCards = sortedCommon();
   const lookup = new Map<string, DictionaryEntry>();
-  for (const entry of [...commonCards, ...recentEntries.value]) {
+  for (const entry of [
+    ...commonCards,
+    ...recentEntries.value,
+    ...calendarEntries,
+    ...numberEntries,
+  ]) {
     if (!lookup.has(entry.normalizedKey)) lookup.set(entry.normalizedKey, entry);
   }
 
@@ -115,6 +122,8 @@ const buildGroups = (): void => {
       }
     }
   }
+  list.push({ id: 'calendar', title: 'Days & months', cards: calendarEntries });
+  list.push({ id: 'numbers', title: 'Numbers', cards: numberEntries });
   if (recentEntries.value.length) {
     list.push({ id: 'recent', title: 'Recent', cards: recentEntries.value });
   }

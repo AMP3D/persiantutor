@@ -74,7 +74,9 @@ const stopwords = new Set([
   'theirs',
 ]);
 
-const wordTolerance = (length: number): number => (length <= 4 ? 1 : length <= 7 ? 2 : 3);
+// Roughly one typo allowed per four characters. Kept tight so near-miss minimal pairs like the
+// weekday names (sunday vs saturday, monday vs sunday) are not accepted for one another.
+const wordTolerance = (length: number): number => Math.floor(length / 4);
 
 const stem = (word: string): string => {
   if (word.length > 5 && word.endsWith('ing')) return word.slice(0, -3);
@@ -162,13 +164,20 @@ const splitParts = (value: string): string[] =>
     .map((part) => part.trim())
     .filter(Boolean);
 
+const stripParens = (value: string): string => value.replace(/\([^)]*\)/g, ' ');
+
+// Kinship qualifiers are optional precision — "paternal uncle" should also accept a bare "uncle".
+const stripQualifiers = (value: string): string =>
+  value.replace(/\b(?:paternal|maternal)\b/gi, ' ');
+
 /**
  * A meaning string yields several acceptable answers: the whole thing, each separated synonym, and the
- * same again with parentheticals dropped — so "rice (uncooked)" accepts both the full phrase and a
- * bare "rice".
+ * same with parentheticals and/or kinship qualifiers dropped — so "rice (uncooked)" accepts a bare
+ * "rice" and "paternal uncle (father's brother)" accepts a bare "uncle".
  */
 const expand = (value: string): string[] => {
-  const variants = [value, value.replace(/\([^)]*\)/g, ' ')];
+  const bare = stripQualifiers(value);
+  const variants = [value, stripParens(value), bare, stripParens(bare)];
   return variants.flatMap((variant) => [variant, ...splitParts(variant)]);
 };
 

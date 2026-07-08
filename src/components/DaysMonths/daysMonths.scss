@@ -1,0 +1,61 @@
+.days-months {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+}
+
+.days-months__farsi {
+  direction: rtl;
+  font-family: var(--font-fa);
+  font-size: 1.3rem;
+  font-weight: 400;
+}
+
+.days-months__finglish {
+  color: var(--primary);
+  font-weight: 600;
+}
+
+.days-months__heading {
+  color: var(--primary);
+  font-size: 1.3rem;
+}
+
+.days-months__intro {
+  color: var(--muted);
+  font-size: 0.9rem;
+}
+
+.days-months__subheading {
+  color: var(--text);
+  font-size: 1rem;
+  margin-top: var(--space-2);
+}
+
+.days-months__table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.days-months__table th {
+  background: var(--surface-alt);
+  color: var(--muted);
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  padding: var(--space-2) var(--space-3);
+  text-align: left;
+  text-transform: uppercase;
+}
+
+.days-months__table td {
+  border-bottom: 0.0625rem solid var(--border);
+  padding: var(--space-2) var(--space-3);
+}
+
+.days-months__table-wrap {
+  background: var(--surface);
+  border: 0.0625rem solid var(--border);
+  border-radius: var(--radius);
+  overflow: auto;
+}

@@ -4,6 +4,7 @@ import ArrowDownTray from '../../assets/icon/arrow-down-tray.svg?react';
 import ArrowLeft from '../../assets/icon/arrow-left.svg?react';
 import ArrowPath from '../../assets/icon/arrow-path.svg?react';
 import ArrowUpTray from '../../assets/icon/arrow-up-tray.svg?react';
+import Calendar from '../../assets/icon/calendar.svg?react';
 import Check from '../../assets/icon/check.svg?react';
 import ChevronLeft from '../../assets/icon/chevron-left.svg?react';
 import ChevronRight from '../../assets/icon/chevron-right.svg?react';
@@ -25,6 +26,7 @@ export type IconName =
   | 'arrow-left'
   | 'arrow-path'
   | 'arrow-up-tray'
+  | 'calendar'
   | 'check'
   | 'chevron-left'
   | 'chevron-right'
@@ -46,6 +48,7 @@ export const icons: Record<IconName, FunctionComponent<SVGProps<SVGSVGElement>>>
   'arrow-left': ArrowLeft,
   'arrow-path': ArrowPath,
   'arrow-up-tray': ArrowUpTray,
+  calendar: Calendar,
   check: Check,
   'chevron-left': ChevronLeft,
   'chevron-right': ChevronRight,

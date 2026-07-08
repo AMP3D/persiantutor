@@ -10,4 +10,5 @@ export const navItems: NavItem[] = [
   { icon: 'rectangle-stack', label: 'Flash Cards', path: '/flash-cards' },
   { icon: 'academic-cap', label: 'Alphabet', path: '/alphabet' },
   { icon: 'hashtag', label: 'Numbers', path: '/numbers' },
+  { icon: 'calendar', label: 'Calendar', path: '/days-months' },
 ];
