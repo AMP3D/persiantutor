@@ -111,9 +111,21 @@ export const commonWords: SeedEntry[] = [
     tags: ['noun', 'adverb'],
     aliases: ['akhar', 'aakhar', 'akhare'],
     usages: [
-      { register: 'informal', finglish: 'akharesh chi shod?', english: 'What happened in the end?' },
-      { register: 'spoken', finglish: 'akharesh chi shodin?', english: 'What happened in the end?' },
-      { register: 'formal', finglish: 'dar nahayat che shod?', english: 'What happened in the end?' },
+      {
+        register: 'informal',
+        finglish: 'akharesh chi shod?',
+        english: 'What happened in the end?',
+      },
+      {
+        register: 'spoken',
+        finglish: 'akharesh chi shodin?',
+        english: 'What happened in the end?',
+      },
+      {
+        register: 'formal',
+        finglish: 'dar nahayat che shod?',
+        english: 'What happened in the end?',
+      },
     ],
   },
   {
@@ -139,27 +151,52 @@ export const commonWords: SeedEntry[] = [
     ],
   },
   {
+    term: 'alaki',
+    meaning: 'fake, pretend; for no reason; just kidding',
+    farsi: 'الکی',
+    tags: ['adjective', 'adverb'],
+    aliases: ['alaki', 'elaki', 'aleki'],
+    note: '"alaki" can mean fake/pretend ("alaki mige" = he\'s bluffing) or "for no reason" ("alaki naro" = don\'t go for nothing).',
+    usages: [
+      { register: 'informal', finglish: 'alaki mige', english: "He's pretending / He's bluffing." },
+      { register: 'spoken', finglish: 'alaki narin', english: "Don't go for no reason." },
+      { register: 'formal', finglish: 'bi dalil naravid', english: "Don't go without reason." },
+    ],
+  },
+  {
     term: 'ameh',
-    meaning: 'paternal aunt (father\'s sister)',
+    meaning: "paternal aunt (father's sister)",
     farsi: 'عمه',
     tags: ['noun'],
     aliases: ['ame', 'ammeh'],
     usages: [
       { register: 'informal', finglish: 'amem oomad', english: 'My aunt came.' },
       { register: 'spoken', finglish: 'ameh-ye man omadan', english: 'My aunt came.' },
-      { register: 'formal', finglish: 'ameh-ye man tashreef avordand', english: 'My aunt arrived.' },
+      {
+        register: 'formal',
+        finglish: 'ameh-ye man tashreef avordand',
+        english: 'My aunt arrived.',
+      },
     ],
   },
   {
     term: 'amū',
-    meaning: 'paternal uncle (father\'s brother)',
+    meaning: "paternal uncle (father's brother)",
     farsi: 'عمو',
     tags: ['noun'],
     aliases: ['amoo', 'amu'],
     usages: [
       { register: 'informal', finglish: 'amoo khoonast', english: 'Uncle is home.' },
-      { register: 'spoken', finglish: 'amoo-ye man khooneshan hastan', english: 'My uncle is home.' },
-      { register: 'formal', finglish: 'amoo-ye man dar manzel hastand', english: 'My uncle is at home.' },
+      {
+        register: 'spoken',
+        finglish: 'amoo-ye man khooneshan hastan',
+        english: 'My uncle is home.',
+      },
+      {
+        register: 'formal',
+        finglish: 'amoo-ye man dar manzel hastand',
+        english: 'My uncle is at home.',
+      },
     ],
   },
   {
@@ -170,8 +207,16 @@ export const commonWords: SeedEntry[] = [
     aliases: ['angosh', 'angosht', 'angusht'],
     usages: [
       { register: 'informal', finglish: 'angoshtam dard mikone', english: 'My finger hurts.' },
-      { register: 'spoken', finglish: 'angoshtetun dard mikone?', english: 'Does your finger hurt?' },
-      { register: 'formal', finglish: 'angoshtetun dard mikonad?', english: 'Does your finger hurt?' },
+      {
+        register: 'spoken',
+        finglish: 'angoshtetun dard mikone?',
+        english: 'Does your finger hurt?',
+      },
+      {
+        register: 'formal',
+        finglish: 'angoshtetun dard mikonad?',
+        english: 'Does your finger hurt?',
+      },
     ],
   },
   {
@@ -476,7 +521,11 @@ export const commonWords: SeedEntry[] = [
     usages: [
       { register: 'informal', finglish: 'bashe, hala biyā', english: 'Okay, come now.' },
       { register: 'spoken', finglish: 'bashe, hala biyayin', english: 'Okay, come now.' },
-      { register: 'formal', finglish: 'besyar khoob, lotfan biyaeed', english: 'Very well, please come.' },
+      {
+        register: 'formal',
+        finglish: 'besyar khoob, lotfan biyaeed',
+        english: 'Very well, please come.',
+      },
     ],
   },
   {
@@ -520,6 +569,19 @@ export const commonWords: SeedEntry[] = [
     ],
   },
   {
+    term: 'befarmā',
+    meaning: 'please, go ahead; here you go; help yourself',
+    farsi: 'بفرما',
+    tags: ['phrase'],
+    aliases: ['befarma', 'befarmaa', 'befarmaeed'],
+    note: '"befarma" is the informal imperative of "farmoodan" (to command). Used to offer something, invite someone to sit, or say "here you are". Formal: "befarmaeed".',
+    usages: [
+      { register: 'informal', finglish: 'befarma beshin', english: 'Please, have a seat.' },
+      { register: 'spoken', finglish: 'befarmayin beshinid', english: 'Please have a seat.' },
+      { register: 'formal', finglish: 'befarmaeed benishinid', english: 'Please be seated.' },
+    ],
+  },
+  {
     term: 'begīr',
     meaning: 'take, grab, catch (imperative)',
     farsi: 'بگیر',
@@ -528,8 +590,16 @@ export const commonWords: SeedEntry[] = [
     note: 'Imperative of "gereftan" (to take/grab). "begirin" = polite plural.',
     usages: [
       { register: 'informal', finglish: 'begir, in māl-e toe', english: 'Take it, this is yours.' },
-      { register: 'spoken', finglish: 'begirin, in māl-e shomāst', english: 'Take it, this is yours.' },
-      { register: 'formal', finglish: 'begirid, in moteallegh be shomāst', english: 'Take it, this belongs to you.' },
+      {
+        register: 'spoken',
+        finglish: 'begirin, in māl-e shomāst',
+        english: 'Take it, this is yours.',
+      },
+      {
+        register: 'formal',
+        finglish: 'begirid, in moteallegh be shomāst',
+        english: 'Take it, this belongs to you.',
+      },
     ],
   },
   {
@@ -649,7 +719,11 @@ export const commonWords: SeedEntry[] = [
     usages: [
       { register: 'informal', finglish: 'bezar roo miz', english: 'Put it on the table.' },
       { register: 'spoken', finglish: 'bezarin roo miz', english: 'Put it on the table.' },
-      { register: 'formal', finglish: 'lotfan roo-ye miz bogzarid', english: 'Please put it on the table.' },
+      {
+        register: 'formal',
+        finglish: 'lotfan roo-ye miz bogzarid',
+        english: 'Please put it on the table.',
+      },
     ],
   },
   {
@@ -821,7 +895,11 @@ export const commonWords: SeedEntry[] = [
     usages: [
       { register: 'informal', finglish: 'boshghab ro bede', english: 'Pass the plate.' },
       { register: 'spoken', finglish: 'boshghab ro bedin', english: 'Pass the plate.' },
-      { register: 'formal', finglish: 'lotfan boshghab ra bedahid', english: 'Please pass the plate.' },
+      {
+        register: 'formal',
+        finglish: 'lotfan boshghab ra bedahid',
+        english: 'Please pass the plate.',
+      },
     ],
   },
   {
@@ -890,7 +968,11 @@ export const commonWords: SeedEntry[] = [
     usages: [
       { register: 'informal', finglish: 'changal ro bede', english: 'Pass the fork.' },
       { register: 'spoken', finglish: 'changal ro bedin', english: 'Pass the fork.' },
-      { register: 'formal', finglish: 'lotfan changal ra bedahid', english: 'Please pass the fork.' },
+      {
+        register: 'formal',
+        finglish: 'lotfan changal ra bedahid',
+        english: 'Please pass the fork.',
+      },
     ],
   },
   {
@@ -981,14 +1063,18 @@ export const commonWords: SeedEntry[] = [
   },
   {
     term: 'dāeī',
-    meaning: 'maternal uncle (mother\'s brother)',
+    meaning: "maternal uncle (mother's brother)",
     farsi: 'دایی',
     tags: ['noun'],
     aliases: ['daee', 'daaee', 'daei'],
     usages: [
       { register: 'informal', finglish: 'daeem oomad', english: 'My uncle came.' },
       { register: 'spoken', finglish: 'daee-ye man omadan', english: 'My uncle came.' },
-      { register: 'formal', finglish: 'daee-ye man tashreef avordand', english: 'My uncle arrived.' },
+      {
+        register: 'formal',
+        finglish: 'daee-ye man tashreef avordand',
+        english: 'My uncle arrived.',
+      },
     ],
   },
   {
@@ -1013,7 +1099,11 @@ export const commonWords: SeedEntry[] = [
     usages: [
       { register: 'informal', finglish: 'damagham dard mikone', english: 'My nose hurts.' },
       { register: 'spoken', finglish: 'damaghetun dard mikone?', english: 'Does your nose hurt?' },
-      { register: 'formal', finglish: 'bini-ye shoma dard mikonad?', english: 'Does your nose hurt?' },
+      {
+        register: 'formal',
+        finglish: 'bini-ye shoma dard mikonad?',
+        english: 'Does your nose hurt?',
+      },
     ],
   },
   {
@@ -1057,7 +1147,7 @@ export const commonWords: SeedEntry[] = [
     meaning: 'fight, quarrel; "davā kardan" = to fight/argue',
     farsi: 'دعوا',
     tags: ['noun'],
-    aliases: ['davah', 'dava', 'da\'va'],
+    aliases: ['davah', 'dava', "da'va"],
     usages: [
       { register: 'informal', finglish: 'davah nakon', english: "Don't fight." },
       { register: 'spoken', finglish: 'davah nakonin', english: "Don't fight." },
@@ -1123,6 +1213,23 @@ export const commonWords: SeedEntry[] = [
     usages: [
       { register: 'spoken', finglish: 'oon dokhtar kie?', english: 'Who is that girl?' },
       { register: 'formal', finglish: 'an dokhtar kist?', english: 'Who is that girl?' },
+    ],
+  },
+  {
+    term: 'dorūd',
+    meaning: 'greetings, salutations (formal/literary alternative to "salām")',
+    farsi: 'درود',
+    tags: ['greeting', 'phrase'],
+    aliases: ['dorood', 'dorud', 'doroud'],
+    note: '"dorood" is a more literary/nationalistic greeting, sometimes preferred over the Arabic-origin "salām".',
+    usages: [
+      { register: 'informal', finglish: 'dorood, chetori?', english: 'Greetings, how are you?' },
+      { register: 'spoken', finglish: 'dorood bar shoma', english: 'Greetings to you.' },
+      {
+        register: 'formal',
+        finglish: 'dorood bar shoma, haletān chetor ast?',
+        english: 'Greetings, how are you?',
+      },
     ],
   },
   {
@@ -1442,6 +1549,19 @@ export const commonWords: SeedEntry[] = [
     ],
   },
   {
+    term: 'gand',
+    meaning: 'stink, stench; mess; "gand zadan" = to mess up / to stink up',
+    farsi: 'گند',
+    tags: ['noun', 'slang'],
+    aliases: ['gand', 'gannd'],
+    note: 'NOT "ghand" (sugar cube). "gand" = stink/mess. "gand zadi" = you messed it up.',
+    usages: [
+      { register: 'informal', finglish: 'gand zadi toosh', english: 'You messed it up.' },
+      { register: 'spoken', finglish: 'gand zadinesh', english: 'You messed it up.' },
+      { register: 'formal', finglish: 'kharab kardid', english: 'You ruined it.' },
+    ],
+  },
+  {
     term: 'ghabūl',
     meaning: 'accepted, agreed; "ghaboole" = it’s a deal',
     farsi: 'قبول',
@@ -1461,7 +1581,11 @@ export const commonWords: SeedEntry[] = [
     usages: [
       { register: 'informal', finglish: 'ghachogh ro bede', english: 'Pass the spoon.' },
       { register: 'spoken', finglish: 'ghachogh ro bedin', english: 'Pass the spoon.' },
-      { register: 'formal', finglish: 'lotfan ghashogh ra bedahid', english: 'Please pass the spoon.' },
+      {
+        register: 'formal',
+        finglish: 'lotfan ghashogh ra bedahid',
+        english: 'Please pass the spoon.',
+      },
     ],
   },
   {
@@ -1489,6 +1613,30 @@ export const commonWords: SeedEntry[] = [
       { register: 'informal', finglish: 'ghalyoon mikeshi?', english: 'Do you smoke hookah?' },
       { register: 'spoken', finglish: 'ghalyoon mikeshin?', english: 'Do you smoke hookah?' },
       { register: 'formal', finglish: 'ghalyoon mikeshid?', english: 'Do you smoke hookah?' },
+    ],
+  },
+  {
+    term: 'gharār',
+    meaning: 'appointment, promise, arrangement; "gharar gozashtan" = to make plans',
+    farsi: 'قرار',
+    tags: ['noun'],
+    aliases: ['gharar', 'gharaar', 'qarar'],
+    usages: [
+      {
+        register: 'informal',
+        finglish: 'gharar-e ma saat-e chand-e?',
+        english: 'What time is our appointment?',
+      },
+      {
+        register: 'spoken',
+        finglish: 'gharar-e ma saat-e chande?',
+        english: 'What time is our plan?',
+      },
+      {
+        register: 'formal',
+        finglish: 'gharar-e ma baraye che saati ast?',
+        english: 'What time is our appointment?',
+      },
     ],
   },
   {
@@ -1663,9 +1811,21 @@ export const commonWords: SeedEntry[] = [
     tags: ['noun'],
     aliases: ['hamsayeh', 'hamsaye', 'hamsaaye'],
     usages: [
-      { register: 'informal', finglish: 'hamsayehamun kheyli khoobe', english: 'Our neighbor is very nice.' },
-      { register: 'spoken', finglish: 'hamsayehamun kheyli khooban', english: 'Our neighbors are very nice.' },
-      { register: 'formal', finglish: 'hamsaye-ye ma besyar khoob hastand', english: 'Our neighbor is very kind.' },
+      {
+        register: 'informal',
+        finglish: 'hamsayehamun kheyli khoobe',
+        english: 'Our neighbor is very nice.',
+      },
+      {
+        register: 'spoken',
+        finglish: 'hamsayehamun kheyli khooban',
+        english: 'Our neighbors are very nice.',
+      },
+      {
+        register: 'formal',
+        finglish: 'hamsaye-ye ma besyar khoob hastand',
+        english: 'Our neighbor is very kind.',
+      },
     ],
   },
   {
@@ -1804,8 +1964,16 @@ export const commonWords: SeedEntry[] = [
     note: '"kalleh" is the colloquial form of "sar" (head). Used in expressions like "kalleh-ye sobh" = early morning.',
     usages: [
       { register: 'informal', finglish: 'kalleham dard mikone', english: 'My head hurts.' },
-      { register: 'spoken', finglish: 'kalleh-ye sobh bidad kardin', english: 'You woke me up at the crack of dawn.' },
-      { register: 'formal', finglish: 'sar-e shoma dard mikonad?', english: 'Does your head hurt?' },
+      {
+        register: 'spoken',
+        finglish: 'kalleh-ye sobh bidad kardin',
+        english: 'You woke me up at the crack of dawn.',
+      },
+      {
+        register: 'formal',
+        finglish: 'sar-e shoma dard mikonad?',
+        english: 'Does your head hurt?',
+      },
     ],
   },
   {
@@ -1887,14 +2055,18 @@ export const commonWords: SeedEntry[] = [
   },
   {
     term: 'khāle',
-    meaning: 'maternal aunt (mother\'s sister)',
+    meaning: "maternal aunt (mother's sister)",
     farsi: 'خاله',
     tags: ['noun'],
     aliases: ['khaleh', 'khale', 'khaaleh'],
     usages: [
       { register: 'informal', finglish: 'khalem oomad', english: 'My aunt came.' },
       { register: 'spoken', finglish: 'khaleh-ye man omadan', english: 'My aunt came.' },
-      { register: 'formal', finglish: 'khaleh-ye man tashreef avordand', english: 'My aunt arrived.' },
+      {
+        register: 'formal',
+        finglish: 'khaleh-ye man tashreef avordand',
+        english: 'My aunt arrived.',
+      },
     ],
   },
   {
@@ -2073,8 +2245,16 @@ export const commonWords: SeedEntry[] = [
     aliases: ['khoshmazeh', 'khoshmaze', 'khosh mazeh'],
     usages: [
       { register: 'informal', finglish: 'kheyli khoshmazast', english: 'It is very delicious.' },
-      { register: 'spoken', finglish: 'ghaza kheyli khoshmazast', english: 'The food is very delicious.' },
-      { register: 'formal', finglish: 'ghaza besyar khoshmaze ast', english: 'The food is very delicious.' },
+      {
+        register: 'spoken',
+        finglish: 'ghaza kheyli khoshmazast',
+        english: 'The food is very delicious.',
+      },
+      {
+        register: 'formal',
+        finglish: 'ghaza besyar khoshmaze ast',
+        english: 'The food is very delicious.',
+      },
     ],
   },
   {
@@ -2282,6 +2462,23 @@ export const commonWords: SeedEntry[] = [
       { register: 'informal', finglish: 'koodoom ro mikhay?', english: 'Which one do you want?' },
       { register: 'spoken', finglish: 'koodoom ro mikhain?', english: 'Which one do you want?' },
       { register: 'formal', finglish: 'kodaam ra mikhahid?', english: 'Which one do you want?' },
+    ],
+  },
+  {
+    term: 'kūft',
+    meaning: 'bruise; (slang) damn, drop dead; "kooft bokhor" = eat dirt / damn you',
+    farsi: 'کوفت',
+    tags: ['noun', 'slang', 'offensive'],
+    aliases: ['kooft', 'kuft', 'kooft bokhor'],
+    note: 'Used as a mild curse/insult. "kooft" literally means bruise, but colloquially is an expression of annoyance.',
+    usages: [
+      {
+        register: 'informal',
+        finglish: 'kooft, cheghadr harf mizani',
+        english: 'Damn, you talk too much.',
+      },
+      { register: 'spoken', finglish: 'lotfan kamtar harf bezanin', english: 'Please talk less.' },
+      { register: 'formal', finglish: 'lotfan kamtar sohbat konid', english: 'Please speak less.' },
     ],
   },
   {
@@ -2546,7 +2743,11 @@ export const commonWords: SeedEntry[] = [
     usages: [
       { register: 'informal', finglish: 'meimoon bazi dar niar', english: "Don't monkey around." },
       { register: 'spoken', finglish: 'meimoon bazi dar niarin', english: "Don't monkey around." },
-      { register: 'formal', finglish: 'lotfan shookhi nakonid', english: 'Please stop joking around.' },
+      {
+        register: 'formal',
+        finglish: 'lotfan shookhi nakonid',
+        english: 'Please stop joking around.',
+      },
     ],
   },
   {
@@ -2583,6 +2784,22 @@ export const commonWords: SeedEntry[] = [
         register: 'formal',
         finglish: 'montazer-e shoma hastam',
         english: 'I am waiting for you.',
+      },
+    ],
+  },
+  {
+    term: 'moshkel',
+    meaning: 'problem, difficulty; "moshkel dari?" = do you have a problem?',
+    farsi: 'مشکل',
+    tags: ['noun', 'adjective'],
+    aliases: ['moshkel', 'moshkele', 'moshkeli'],
+    usages: [
+      { register: 'informal', finglish: 'moshkeli nist', english: 'No problem.' },
+      { register: 'spoken', finglish: 'moshkeli pish oomade?', english: 'Has a problem come up?' },
+      {
+        register: 'formal',
+        finglish: 'moshkeli pish amade ast?',
+        english: 'Has a problem arisen?',
       },
     ],
   },
@@ -2640,8 +2857,16 @@ export const commonWords: SeedEntry[] = [
     note: '"mu" or "moo" = a single hair or hair in general. "mooh-at" = your hair.',
     usages: [
       { register: 'informal', finglish: 'moohat khoobe', english: 'Your hair looks nice.' },
-      { register: 'spoken', finglish: 'moo-ye shoma kheyli khoobe', english: 'Your hair looks very nice.' },
-      { register: 'formal', finglish: 'moo-ye shoma besyar zibast', english: 'Your hair is very beautiful.' },
+      {
+        register: 'spoken',
+        finglish: 'moo-ye shoma kheyli khoobe',
+        english: 'Your hair looks very nice.',
+      },
+      {
+        register: 'formal',
+        finglish: 'moo-ye shoma besyar zibast',
+        english: 'Your hair is very beautiful.',
+      },
     ],
   },
   {
@@ -2708,7 +2933,7 @@ export const commonWords: SeedEntry[] = [
   },
   {
     term: 'nārāhat',
-    meaning: 'upset, sad, uncomfortable',
+    meaning: 'upset, sad, uncomfortable, concern',
     farsi: 'ناراحت',
     tags: ['adjective'],
     aliases: ['naraahat'],
@@ -2741,7 +2966,11 @@ export const commonWords: SeedEntry[] = [
     usages: [
       { register: 'informal', finglish: 'nakhonam shekast', english: 'My nail broke.' },
       { register: 'spoken', finglish: 'nakhonetun shekaste?', english: 'Did your nail break?' },
-      { register: 'formal', finglish: 'nakhon-e shoma shekaste ast?', english: 'Has your nail broken?' },
+      {
+        register: 'formal',
+        finglish: 'nakhon-e shoma shekaste ast?',
+        english: 'Has your nail broken?',
+      },
     ],
   },
   {
@@ -2917,9 +3146,21 @@ export const commonWords: SeedEntry[] = [
     aliases: ['raftam', 'rafttam'],
     note: 'Past tense of "raftan" (to go). "raftam" = I went, "rafti" = you went, "raft" = he/she went.',
     usages: [
-      { register: 'informal', finglish: 'diruz raftam bazar', english: 'I went to the market yesterday.' },
-      { register: 'spoken', finglish: 'diruz raftam bazaar', english: 'I went to the market yesterday.' },
-      { register: 'formal', finglish: 'diruz be bazar raftam', english: 'I went to the market yesterday.' },
+      {
+        register: 'informal',
+        finglish: 'diruz raftam bazar',
+        english: 'I went to the market yesterday.',
+      },
+      {
+        register: 'spoken',
+        finglish: 'diruz raftam bazaar',
+        english: 'I went to the market yesterday.',
+      },
+      {
+        register: 'formal',
+        finglish: 'diruz be bazar raftam',
+        english: 'I went to the market yesterday.',
+      },
     ],
   },
   {
@@ -2930,9 +3171,21 @@ export const commonWords: SeedEntry[] = [
     aliases: ['rajeb', 'raajeb', 'raje be'],
     note: 'More colloquial form of "dar bāre-ye" (about/regarding).',
     usages: [
-      { register: 'informal', finglish: 'rajeb chi harf mizani?', english: 'What are you talking about?' },
-      { register: 'spoken', finglish: 'rajeb chi sohbat mikonin?', english: 'What are you talking about?' },
-      { register: 'formal', finglish: 'dar bareye che mozooi sohbat mikonid?', english: 'What topic are you discussing?' },
+      {
+        register: 'informal',
+        finglish: 'rajeb chi harf mizani?',
+        english: 'What are you talking about?',
+      },
+      {
+        register: 'spoken',
+        finglish: 'rajeb chi sohbat mikonin?',
+        english: 'What are you talking about?',
+      },
+      {
+        register: 'formal',
+        finglish: 'dar bareye che mozooi sohbat mikonid?',
+        english: 'What topic are you discussing?',
+      },
     ],
   },
   {
@@ -3069,6 +3322,19 @@ export const commonWords: SeedEntry[] = [
         finglish: 'be salamati-ye shoma, noosh-e jan',
         english: 'To your health, enjoy.',
       },
+    ],
+  },
+  {
+    term: 'sālem',
+    meaning: 'healthy, safe, intact; hi (informal greeting)',
+    farsi: 'سالم',
+    tags: ['adjective', 'greeting'],
+    aliases: ['salem', 'saalem'],
+    note: 'As an adjective means healthy/intact. Also used as a casual greeting ("salem!" ≈ "hey!").',
+    usages: [
+      { register: 'informal', finglish: 'salem, chetori?', english: 'Hey, how are you?' },
+      { register: 'spoken', finglish: 'haletun saleme?', english: 'Is your health good?' },
+      { register: 'formal', finglish: 'haletan salem ast?', english: 'Is your health well?' },
     ],
   },
   {
@@ -3215,8 +3481,16 @@ export const commonWords: SeedEntry[] = [
     aliases: ['soal', 'soaal', 'soval'],
     usages: [
       { register: 'informal', finglish: 'ye soal daram', english: 'I have a question.' },
-      { register: 'spoken', finglish: 'ye soal daram azatun', english: 'I have a question for you.' },
-      { register: 'formal', finglish: 'yek soal az shoma daram', english: 'I have a question for you.' },
+      {
+        register: 'spoken',
+        finglish: 'ye soal daram azatun',
+        english: 'I have a question for you.',
+      },
+      {
+        register: 'formal',
+        finglish: 'yek soal az shoma daram',
+        english: 'I have a question for you.',
+      },
     ],
   },
   {
@@ -3478,6 +3752,18 @@ export const commonWords: SeedEntry[] = [
     ],
   },
   {
+    term: 'yavāsh',
+    meaning: 'slowly, gently, quietly',
+    farsi: 'یواش',
+    tags: ['adverb'],
+    aliases: ['yavash', 'yavaash', 'yavassh'],
+    usages: [
+      { register: 'informal', finglish: 'yavash boro', english: 'Go slowly.' },
+      { register: 'spoken', finglish: 'yavash berin', english: 'Go slowly.' },
+      { register: 'formal', finglish: 'lotfan aheste beravid', english: 'Please go slowly.' },
+    ],
+  },
+  {
     term: 'yek',
     meaning: 'one',
     farsi: 'یک',
@@ -3590,7 +3876,11 @@ export const commonWords: SeedEntry[] = [
     usages: [
       { register: 'informal', finglish: 'zanjir ro baaz kon', english: 'Open the chain.' },
       { register: 'spoken', finglish: 'zanjir ro baaz konin', english: 'Open the chain.' },
-      { register: 'formal', finglish: 'lotfan zanjir ra baz konid', english: 'Please open the chain.' },
+      {
+        register: 'formal',
+        finglish: 'lotfan zanjir ra baz konid',
+        english: 'Please open the chain.',
+      },
     ],
   },
   {

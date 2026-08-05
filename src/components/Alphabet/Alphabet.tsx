@@ -1,4 +1,5 @@
-import { alphabetMode, letterForms, persianAlphabet, setAlphabetMode } from './alphabet';
+import { persianAlphabet } from '../../data/alphabet';
+import { alphabetMode, letterForms, setAlphabetMode } from './alphabet';
 import './alphabet.scss';
 
 const Alphabet = () => {

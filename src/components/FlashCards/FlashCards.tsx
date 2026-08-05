@@ -1,9 +1,11 @@
 import { useEffect, useRef } from 'react';
 import { common } from '../../state/common';
+import AlternatingWord from '../AlternatingWord/AlternatingWord.tsx';
 import Icon from '../Icon/Icon.tsx';
 import {
   answer,
   autoFocus,
+  cardPhrases,
   clearGroup,
   closeSet,
   deck,
@@ -24,9 +26,14 @@ import {
   result,
   reveal,
   setTiles,
+  showFinglish,
+  showPhrases,
+  showTerm,
   stats,
   stopFlip,
   studying,
+  toggleFinglish,
+  togglePhrases,
   trackKeyboard,
 } from './flashCards';
 import './flashCards.scss';
@@ -112,6 +119,10 @@ const FlashCards = () => {
 
   const informal = card?.usages.filter((usage) => usage.register === 'informal') ?? [];
   const formal = card?.usages.filter((usage) => usage.register === 'formal') ?? [];
+  const finglish = showFinglish.value;
+  const phrasesOn = showPhrases.value;
+  const phrases = card ? cardPhrases(card) : [];
+  const termVisible = card ? showTerm(card) : false;
 
   return (
     <div className="flash-cards">
@@ -141,6 +152,33 @@ const FlashCards = () => {
         </button>
       </div>
 
+      <div aria-label="Card display" className="flash-cards__options" role="group">
+        <button
+          aria-pressed={finglish}
+          className={
+            finglish ? 'flash-cards__toggle flash-cards__toggle--on' : 'flash-cards__toggle'
+          }
+          onClick={toggleFinglish}
+          type="button"
+        >
+          Finglish
+        </button>
+
+        {finglish && (
+          <button
+            aria-pressed={phrasesOn}
+            className={
+              phrasesOn ? 'flash-cards__toggle flash-cards__toggle--on' : 'flash-cards__toggle'
+            }
+            disabled={!finglish}
+            onClick={togglePhrases}
+            type="button"
+          >
+            Phrases
+          </button>
+        )}
+      </div>
+
       {card ? (
         <>
           <div className="flash-cards__counter">
@@ -157,8 +195,27 @@ const FlashCards = () => {
           >
             <div className="flash-cards__inner">
               <div className="flash-cards__face flash-cards__face--front">
-                <span className="flash-cards__term">{card.term}</span>
-                {card.farsi && <span className="flash-cards__farsi">{card.farsi}</span>}
+                {termVisible && <span className="flash-cards__term">{card.term}</span>}
+                {card.farsi && (
+                  <span
+                    className={
+                      termVisible
+                        ? 'flash-cards__farsi'
+                        : 'flash-cards__farsi flash-cards__farsi--lead'
+                    }
+                  >
+                    <AlternatingWord word={card.farsi} />
+                  </span>
+                )}
+                {phrases.length > 0 && (
+                  <div className="flash-cards__phrases">
+                    {phrases.map((phrase) => (
+                      <p key={phrase} className="flash-cards__phrase">
+                        {phrase}
+                      </p>
+                    ))}
+                  </div>
+                )}
                 <form className="flash-cards__quiz" onClick={stopFlip} onSubmit={handleSubmit}>
                   <input
                     aria-label="Your answer"
@@ -174,7 +231,10 @@ const FlashCards = () => {
                     Check
                   </button>
                 </form>
-                <span className="flash-cards__hint">Tap to reveal, or type your answer</span>
+                <span className="flash-cards__hint">
+                  Tap a letter to reveal the meaning. Tap the card to reveal the answer or type your
+                  answer in to check your answer.
+                </span>
               </div>
 
               <div className="flash-cards__face flash-cards__face--back">

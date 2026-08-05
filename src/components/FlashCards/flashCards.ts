@@ -11,9 +11,13 @@ import {
   loadGroupSize,
   loadMisses,
   loadProgress,
+  loadShowFinglish,
+  loadShowPhrases,
   saveGroupSize,
   saveMisses,
   saveProgress,
+  saveShowFinglish,
+  saveShowPhrases,
 } from '../../db/flashcards';
 import { isAnswerCorrect } from '../../engine/answerMatch';
 import type { DictionaryEntry } from '../../models/Entry';
@@ -45,6 +49,8 @@ export const groupSizeOptions: GroupSize[] = [10, 20, 50, 100, 'all'];
 
 const MISSED_LIMIT = 20;
 
+const PHRASE_LIMIT = 3;
+
 export const answer = signal('');
 
 /** Whether the next card should grab focus — only true once the user has started typing answers. */
@@ -69,6 +75,12 @@ export const misses = signal<MissCounts>({});
 export const progress = signal<GroupProgress>({});
 
 export const result = signal<QuizResult | null>(null);
+
+/** Off hides the Finglish spelling so only the Persian script is left for the learner to read. */
+export const showFinglish = signal(true);
+
+/** On adds the word's example phrases to the front of the card as context. */
+export const showPhrases = signal(false);
 
 /** False shows the set-picker grid; true shows the card view for the chosen set. */
 export const studying = signal(false);
@@ -205,6 +217,20 @@ const refresh = async (): Promise<void> => {
   buildGroups();
 };
 
+/**
+ * Colloquial example phrases (formal register left out — it's the same meaning in stiffer wording)
+ * for the front of the card. They're dropped entirely with Finglish off: the phrase would spell out
+ * in Finglish the very word the learner is there to read in Persian.
+ */
+export const cardPhrases = (card: DictionaryEntry): string[] => {
+  if (!showPhrases.value || !showFinglish.value) return [];
+  const texts = card.usages
+    .filter((usage) => usage.register !== 'formal')
+    .map((usage) => usage.finglish);
+
+  return [...new Set(texts)].slice(0, PHRASE_LIMIT);
+};
+
 export const clearGroup = (): void => {
   const group = activeGroup();
   if (!group) return;
@@ -218,14 +244,18 @@ export const clearGroup = (): void => {
 export const ensureDeck = async (): Promise<void> => {
   if (!loaded) {
     loaded = true;
-    const [size, savedMisses, savedProgress] = await Promise.all([
+    const [size, savedMisses, savedProgress, savedFinglish, savedPhrases] = await Promise.all([
       loadGroupSize(),
       loadMisses(),
       loadProgress(),
+      loadShowFinglish(),
+      loadShowPhrases(),
     ]);
     groupSize.value = size;
     misses.value = savedMisses;
     progress.value = savedProgress;
+    showFinglish.value = savedFinglish;
+    showPhrases.value = savedPhrases;
   }
   await refresh();
   if (deck.value.length === 0 && activeGroup()) buildDeck();
@@ -340,6 +370,9 @@ export const setTiles = (): SetTile[] =>
     };
   });
 
+/** Hiding the Finglish only makes sense when the card has Persian script left to read. */
+export const showTerm = (card: DictionaryEntry): boolean => showFinglish.value || !card.farsi;
+
 /** Active set's title + progress for the card-view header. */
 export const stats = (): { title: string; hint: string; done: number; total: number } => {
   const group = activeGroup();
@@ -355,6 +388,16 @@ export const stats = (): { title: string; hint: string; done: number; total: num
 /** Keep clicks inside the answer box from bubbling up and flipping the card. */
 export const stopFlip = (event: MouseEvent): void => {
   event.stopPropagation();
+};
+
+export const toggleFinglish = (): void => {
+  showFinglish.value = !showFinglish.value;
+  void saveShowFinglish(showFinglish.value);
+};
+
+export const togglePhrases = (): void => {
+  showPhrases.value = !showPhrases.value;
+  void saveShowPhrases(showPhrases.value);
 };
 
 /**

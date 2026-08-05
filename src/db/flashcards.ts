@@ -12,6 +12,8 @@ export type GroupProgress = Record<string, string[]>;
 const SIZE_KEY = 'flashcards.size';
 const MISSES_KEY = 'flashcards.misses';
 const PROGRESS_KEY = 'flashcards.progress';
+const FINGLISH_KEY = 'flashcards.finglish';
+const PHRASES_KEY = 'flashcards.phrases';
 
 export const loadGroupSize = async (): Promise<GroupSize> =>
   (await getSetting<GroupSize>(SIZE_KEY)) ?? 20;
@@ -28,3 +30,13 @@ export const loadProgress = async (): Promise<GroupProgress> =>
 
 export const saveProgress = (progress: GroupProgress): Promise<void> =>
   setSetting(PROGRESS_KEY, progress);
+
+export const loadShowFinglish = async (): Promise<boolean> =>
+  (await getSetting<boolean>(FINGLISH_KEY)) ?? true;
+
+export const saveShowFinglish = (show: boolean): Promise<void> => setSetting(FINGLISH_KEY, show);
+
+export const loadShowPhrases = async (): Promise<boolean> =>
+  (await getSetting<boolean>(PHRASES_KEY)) ?? false;
+
+export const saveShowPhrases = (show: boolean): Promise<void> => setSetting(PHRASES_KEY, show);
